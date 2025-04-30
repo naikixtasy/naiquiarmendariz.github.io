@@ -30,6 +30,12 @@ section {
     max-width: 900px;
     margin: auto;
 
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
 .about-card {
   max-width: 900px;
   margin: 0 auto;
@@ -37,13 +43,15 @@ section {
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 0 20px rgba(155, 93, 229, 0.4);
+  animation: floatCard 5s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-card:hover {
-  transform: scale(1.015);
+  transform: scale(1.025);
   box-shadow: 0 0 25px rgba(255, 128, 255, 0.5);
 }
+
 
 }
 button:hover {
