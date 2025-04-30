@@ -2,60 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martian Greenhouse Project</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+  <title>Martian Greenhouse</title>
   <style>
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle, #1a1a2e, #0f0f1a);
-      color: #f8f8ff;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #1e0033, #000010);
+      color: #f0f0f0;
+      line-height: 1.6;
     }
+
     header {
-      background: linear-gradient(90deg, #3f51b5, #673ab7);
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 60px 20px 20px;
       text-align: center;
-      padding: 2rem;
     }
+
     header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-      color: #fff;
+      color: #ffffff;
+      font-size: 2.7em;
+      margin-bottom: 10px;
     }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
+
+    header p {
+      color: #ccccff;
+      font-size: 1.2em;
     }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
     h2 {
-      color: #90caf9;
+      color: #c1a9ff;
+      font-size: 1.5em;
+      border-bottom: 1px solid #444;
+      padding-bottom: 6px;
+      margin-top: 40px;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.8rem 1.2rem;
-      color: white;
-      background-color: #7b1fa2;
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #a88eff;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
+
+    a:hover {
+      text-decoration: underline;
     }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      border: 2px solid #fff;
+
+    .mentor {
+      text-align: center;
+      margin-top: 30px;
     }
+
+    .mentor img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid #a88eff;
+      margin-bottom: 10px;
+    }
+
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      padding: 2rem;
+      padding: 30px;
+      font-size: 0.9em;
       color: #aaa;
     }
   </style>
@@ -63,47 +80,58 @@
 <body>
   <header>
     <h1>Martian Greenhouse Project</h1>
-    <p>Exploring Sustainable Life on Mars</p>
+    <p>STEM Mentorship Initiative in Sustainable Space Agriculture</p>
   </header>
-  
-  <div class="container">
-    <h2>About the Project</h2>
-    <p>This project is part of the Martian Greenhouse Initiative, where multidisciplinary student teams explore sustainable food systems for future space habitats. We are building a portable, self-sustaining, aeroponic plant growth chamber designed to operate in Martian-like conditions.</p>
 
-    <h2>Key Features</h2>
-    <ul>
-      <li>Aeroponic system – water efficient, no soil</li>
-      <li>Removable racks and 3D printed platforms</li>
-      <li>Sunlight-imitating LED lighting</li>
-      <li>Fully enclosed, self-contained habitat</li>
-    </ul>
+  <main>
+    <section>
+      <h2>About the Project</h2>
+      <p>
+        The Martian Greenhouse Initiative is a NASA-led research mentorship program focused on designing food systems for future space missions. As part of a multidisciplinary team, I contributed to the development of an enclosed aeroponic plant habitat for Mars-like environments.
+      </p>
+    </section>
 
-    <h2>Presentation Highlights</h2>
-    <p>Our team has presented at several collaborative Zoom sessions with NASA experts, educators, and STEM mentors. This includes design pitches, feedback sessions, and ongoing research discussions.</p>
+    <section>
+      <h2>What I Contributed</h2>
+      <ul>
+        <li>Designed modular 3D-printable platforms and removable plant racks</li>
+        <li>Integrated lighting systems to simulate natural sunlight using LED arrays</li>
+        <li>Implemented aeroponic misting and water filtration concepts for soil-free growth</li>
+        <li>Participated in NASA-led collaborative reviews and presentations</li>
+        <li>Documented design decisions and research highlights for outreach</li>
+      </ul>
+    </section>
 
-    <h2>Meet the Team</h2>
-    <p>The team includes engineering students from NMSU and beyond, collaborating under the guidance of Dr. Emily Matula and other NASA mentors.</p>
+    <section>
+      <h2>Why It Matters</h2>
+      <p>
+        Food sustainability is a critical challenge for long-duration space exploration. This project models real-world limitations astronauts may face on Mars or the Moon, emphasizing compact, self-contained systems that conserve water and energy while promoting plant health.
+      </p>
+    </section>
 
-    <h2>Special Thanks</h2>
-    <p>A heartfelt thank you to <a href="https://www.linkedin.com/in/gregg-cannady-0325b6bb/" target="_blank">Gregg Cannady</a>, a passionate advocate for STEM education and the person who invited us into this amazing journey. Your support is deeply appreciated!</p>
+    <section>
+      <h2>Special Thanks</h2>
+      <div class="mentor">
+        <img src="gregg_cannady.png" alt="Gregg Cannady">
+        <p>
+          A heartfelt thank-you to <strong>Gregg Cannady</strong>, whose support and mentorship have empowered countless students to dream bigger and reach higher. His dedication to STEM education has been instrumental in opening doors to projects like this one.
+        </p>
+        <p>
+          Learn more about Gregg’s mission: <a href="https://www.linkedin.com/in/gregg-cannady-0325b6bb/" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </section>
 
-    <a class="button" href="https://naiquiarmendariz.github.io/werc2025/" target="_blank">View WERC Project Page</a>
-  
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="scene1.webp" alt="Martian Design">
-      <img src="scene2.webp" alt="Greenhouse Concept">
-      <img src="scene3.webp" alt="Interior with Plants">
-      <img src="scene4.webp" alt="Observation Window">
-      <img src="scene5.webp" alt="Dome Farm">
-      <img src="scene6.webp" alt="Enclosure Design">
-      <img src="scene7.webp" alt="Energy System">
-      <img src="scene8.webp" alt="Control Room">
-    </div>
-  </div>
+    <section>
+      <h2>More Coming Soon</h2>
+      <p>
+        A gallery of design images and research highlights will be added here soon. Stay tuned for updates on our greenhouse prototype, Zoom presentations, and engineering diagrams.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    Martian Greenhouse Project &copy; 2025. Inspired by science, built for the future.
+    &copy; 2025 Naiqui M. Armendariz – Martian Greenhouse Initiative
   </footer>
 </body>
 </html>
