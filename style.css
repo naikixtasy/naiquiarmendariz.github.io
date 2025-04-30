@@ -30,6 +30,11 @@ section {
     max-width: 900px;
     margin: auto;
 }
+button:hover {
+  box-shadow: 0 0 10px #a3d4ff, 0 0 20px #82eaff;
+  transform: scale(1.05);
+}
+
 footer {
     background-color: rgba(32, 0, 64, 0.85);
     color: white;
