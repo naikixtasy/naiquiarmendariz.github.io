@@ -136,7 +136,7 @@
   <div id="tsparticles"></div>
 
   <header>
-    <img src="naiquipicture.png" alt="Naiqui Armendariz">
+    <img src="naiqui.jpg" alt="Naiqui Armendariz">
     <h1>Naiqui M. Armendariz</h1>
     <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
   </header>
@@ -144,7 +144,6 @@
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
     <a href="biography.html">Biography</a>
     <a href="blog.html">Blog</a>
@@ -152,10 +151,24 @@
 
   <button id="backToTop" title="Back to Top">⬆️</button>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I’m Naiqui Armendariz, an aerospace and mechanical engineering student passionate about sustainability, STEM outreach, and space system design. I believe in empowering communities through knowledge and innovation.</p>
-  </section>
+  <section id="about" style="position: relative; padding: 4rem 10%; text-align: center;">
+  <h2 style="color: #e7b3ff; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 0 0 10px #9b5de5;">About Me</h2>
+
+  <div class="about-card">
+    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+      I'm <strong>Naiqui M. Armendariz</strong> — an Aerospace and Mechanical Engineering student with a passion for innovation, sustainability, and automation. My mission is not just to reach space, but to help build systems that make life better on Earth and beyond.
+    </p>
+    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      My work spans hands-on mentoring in international STEM initiatives, NASA-affiliated projects, automation tools using Python, and advanced fabrication techniques like 3D printing and laser cutting. I believe that true leadership comes from lifting others, and my journey reflects a commitment to education, resilience, and forward-thinking design.
+    </p>
+    <p style="font-size: 1.05rem; line-height: 1.7;">
+      Whether it’s helping students from Peru or Belize develop engineering ideas, prototyping for sustainable missions, or coding tools to streamline workflows — I aim to use my skills to make a difference, one project at a time.
+    </p>
+    <a href="biography.html" style="display: inline-block; margin-top: 2rem; padding: 10px 20px; border-radius: 25px; background: linear-gradient(to right, #a64ac9, #40a4f5); color: #fff; font-weight: bold; text-decoration: none; transition: background 0.3s ease;">📖 Read my full story</a>
+  </div>
+</section>
+
+
 
   <section id="projects" class="projects">
     <h2>Projects</h2>
@@ -169,21 +182,87 @@
     </ul>
   </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <p>Photos and memories coming soon...</p>
-  </section>
+ <section id="contact" class="section">
+  <h2>Contact Me</h2>
+  <p>If you’d like to collaborate or learn more, feel free to reach out!</p>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>If you'd like to collaborate or learn more, feel free to reach out!</p>
-    <form action="mailto:naikixtasy86@gmail.com" method="POST" enctype="text/plain" style="max-width:500px;margin:auto;">
-      <input type="text" name="Name" placeholder="Your Name" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;">
-      <input type="email" name="Email" placeholder="Your Email" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;">
-      <textarea name="Message" placeholder="Type your message here..." rows="5" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;"></textarea>
-      <button type="submit" style="background-color:#9b5de5;color:white;border:none;padding:10px 20px;border-radius:5px;">Send</button>
-    </form>
-  </section>
+  <form action="mailto:naikixtasy86@gmail.com" method="POST" enctype="text/plain" style="max-width: 600px; margin: 0 auto;">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Your Email" />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+
+    <button type="submit">🚀 Send Message</button>
+  </form>
+
+  <div style="margin-top: 20px;">
+    <p>📧 <a href="mailto:naikixtasy86@gmail.com">naikixtasy86@gmail.com</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank">Connect on LinkedIn</a></p>
+  </div>
+</section>
+
+<style>
+  #contact {
+    background-color: #1a0c2f;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(155, 100, 255, 0.3);
+  }
+
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #contact input,
+  #contact textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #290c40;
+    color: #fff;
+    outline: none;
+  }
+
+  #contact input:focus,
+  #contact textarea:focus {
+    box-shadow: 0 0 8px #aa66ff;
+  }
+
+  #contact button {
+    background: linear-gradient(to right, #8e44ad, #3498db);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #contact button:hover {
+    background: linear-gradient(to right, #9b59b6, #2980b9);
+  }
+
+  #contact a {
+    color: #82eaff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  #contact a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 
   <footer>
     <p>© 2025 Naiqui Armendariz</p>
