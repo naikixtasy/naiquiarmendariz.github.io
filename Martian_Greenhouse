@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martian Greenhouse Project</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+      color: #f8f8ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #3f51b5, #673ab7);
+      text-align: center;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #fff;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h2 {
+      color: #90caf9;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.2rem;
+      color: white;
+      background-color: #7b1fa2;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      border: 2px solid #fff;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 2rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Martian Greenhouse Project</h1>
+    <p>Exploring Sustainable Life on Mars</p>
+  </header>
+  
+  <div class="container">
+    <h2>About the Project</h2>
+    <p>This project is part of the Martian Greenhouse Initiative, where multidisciplinary student teams explore sustainable food systems for future space habitats. We are building a portable, self-sustaining, aeroponic plant growth chamber designed to operate in Martian-like conditions.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li>Aeroponic system – water efficient, no soil</li>
+      <li>Removable racks and 3D printed platforms</li>
+      <li>Sunlight-imitating LED lighting</li>
+      <li>Fully enclosed, self-contained habitat</li>
+    </ul>
+
+    <h2>Presentation Highlights</h2>
+    <p>Our team has presented at several collaborative Zoom sessions with NASA experts, educators, and STEM mentors. This includes design pitches, feedback sessions, and ongoing research discussions.</p>
+
+    <h2>Meet the Team</h2>
+    <p>The team includes engineering students from NMSU and beyond, collaborating under the guidance of Dr. Emily Matula and other NASA mentors.</p>
+
+    <h2>Special Thanks</h2>
+    <p>A heartfelt thank you to <a href="https://www.linkedin.com/in/gregg-cannady-0325b6bb/" target="_blank">Gregg Cannady</a>, a passionate advocate for STEM education and the person who invited us into this amazing journey. Your support is deeply appreciated!</p>
+
+    <a class="button" href="https://naiquiarmendariz.github.io/werc2025/" target="_blank">View WERC Project Page</a>
+  
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="scene1.webp" alt="Martian Design">
+      <img src="scene2.webp" alt="Greenhouse Concept">
+      <img src="scene3.webp" alt="Interior with Plants">
+      <img src="scene4.webp" alt="Observation Window">
+      <img src="scene5.webp" alt="Dome Farm">
+      <img src="scene6.webp" alt="Enclosure Design">
+      <img src="scene7.webp" alt="Energy System">
+      <img src="scene8.webp" alt="Control Room">
+    </div>
+  </div>
+
+  <footer>
+    Martian Greenhouse Project &copy; 2025. Inspired by science, built for the future.
+  </footer>
+</body>
+</html>
