@@ -1,138 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naiqui M. Armendariz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d001a, #1b0033);
+      color: #ffffff;
+      overflow-x: hidden;
+    }
 
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiqui Armendariz | Aerospace Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    header {
+      background-image: url('nebulosa.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-weight: 300;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #9b5de5;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #9b5de5;
+    }
+
+    section {
+      padding: 2rem 5%;
+      transition: all 0.5s ease-in-out;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #12002b;
+      color: #ccc;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #9b5de5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      z-index: 99;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+  </style>
 </head>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
 <body>
+  <div id="tsparticles"></div>
+  <header>
+    <h1>Naiqui M. Armendariz</h1>
+    <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
+  </header>
 
-    <header>
-        <h1>Naiqui M. Armendariz</h1>
-        <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section id="about">
-        <img src="naiqui.jpg" alt="Naiqui Armendariz" class="profile-img">
-        <h2>About Me</h2>
-        <p>Hello! I’m Naiqui Armendariz — an Aerospace and Mechanical Engineering student on a mission to make space and Earth a better place through science, automation, and sustainability.</p>
-        <p>With experience ranging from autonomous flight integration to sustainable environmental systems, I’m driven by curiosity and compassion. My passion for innovation has taken me from research labs to real-world competitions, always exploring how engineering can improve lives.</p>
-        <p>My dream is to become an astronaut — not just to reach space, but to expand consciousness and inspire others through STEM leadership and ethical AI development. Let’s break barriers and build futures, together.</p>
-    </section>
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>WERC 2025:</strong> Wind-powered water filtration system for wildfire restoration.<br>
-      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">🌐 View full project website</a>
-    </li>
-    <li><strong>Martian Greenhouse:</strong> Mentorship with NASA-led project on food systems for Mars.<br>
-      <a href="martian_greenhouse.html" target="_blank">🛰️ View full project webpage</a>
-    </li>
-    <li><strong>SSEP Mission 1:</strong> Microgravity experiment with cactus mucilage for water purification.<br>
-    <a href="ssep_project.html" target="_blank">🚀 View full project page</a>
-    </li>
-  </ul>
-</section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
+  <button id="backToTop" title="Back to Top">⬆️</button>
 
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>If you’d like to collaborate or learn more, feel free to reach out!</p>
+  <script>
+    // Particles
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.4 },
+        opacity: { value: 0.5 },
+        color: { value: "#ffffff" },
+        links: { enable: true, color: "#ffffff", distance: 100 }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 80 },
+          push: { quantity: 4 }
+        }
+      }
+    });
 
-  <form action="mailto:naikixtasy86@gmail.com" method="POST" enctype="text/plain" style="max-width: 600px; margin: 0 auto;">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required placeholder="Your Name" />
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required placeholder="Your Email" />
-
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
-
-    <button type="submit">🚀 Send Message</button>
-  </form>
-
-  <div style="margin-top: 20px;">
-    <p>📧 <a href="mailto:naikixtasy86@gmail.com">naikixtasy86@gmail.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank">Connect on LinkedIn</a></p>
-  </div>
-</section>
-
-<style>
-  #contact {
-    background-color: #1a0c2f;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(155, 100, 255, 0.3);
-  }
-
-  #contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  #contact input,
-  #contact textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    background: #290c40;
-    color: #fff;
-    outline: none;
-  }
-
-  #contact input:focus,
-  #contact textarea:focus {
-    box-shadow: 0 0 8px #aa66ff;
-  }
-
-  #contact button {
-    background: linear-gradient(to right, #8e44ad, #3498db);
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  #contact button:hover {
-    background: linear-gradient(to right, #9b59b6, #2980b9);
-  }
-
-  #contact a {
-    color: #82eaff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  #contact a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-    <footer>
-        <p>© 2025 Naiqui Armendariz</p>
-    </footer>
+    // Back to Top Button
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    backToTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
 </body>
+
 </html>
