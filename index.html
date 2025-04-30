@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Naiqui M. Armendariz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #0d001a, #1b0033);
-      color: #ffffff;
+      color: #fff;
       overflow-x: hidden;
     }
 
@@ -29,29 +29,36 @@
       padding: 3rem 1rem;
       text-align: center;
       color: #fff;
-      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    }
+
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #9b5de5;
+      object-fit: cover;
+      margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin: 0;
-      animation: fadeInDown 1s ease-in-out;
+      font-weight: bold;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-top: 0.5rem;
       font-weight: 300;
-      animation: fadeIn 2s ease-in-out;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       background-color: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(6px);
-      padding: 0.7rem 0;
+      padding: 0.5rem 0;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -60,7 +67,7 @@
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 1.2rem;
+      margin: 0 1.5rem;
       font-weight: 600;
       position: relative;
       transition: color 0.3s;
@@ -86,21 +93,27 @@
     }
 
     section {
-      padding: 3rem 5%;
+      padding: 3rem 10%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #dbaaff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .projects a {
+      color: #94f0ff;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1rem;
       font-size: 0.9rem;
       background-color: #12002b;
       color: #ccc;
-    }
-
-    h2 {
-      color: #cfaaff;
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     #backToTop {
@@ -110,78 +123,20 @@
       background-color: #9b5de5;
       color: white;
       border: none;
-      padding: 12px 15px;
+      padding: 10px 15px;
       border-radius: 50%;
       font-size: 20px;
       cursor: pointer;
       display: none;
       z-index: 99;
     }
-
-    /* Contact form styles */
-    #contact form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    #contact input,
-    #contact textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      background: #290c40;
-      color: #fff;
-      outline: none;
-    }
-
-    #contact button {
-      background: linear-gradient(to right, #8e44ad, #3498db);
-      color: white;
-      border: none;
-      padding: 12px;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    #contact button:hover {
-      background: linear-gradient(to right, #9b59b6, #2980b9);
-      box-shadow: 0 0 10px #a3d4ff, 0 0 20px #82eaff;
-    }
-
-    a.project-link {
-      color: #73b1ff;
-      text-decoration: underline;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 5px;
-    }
-
-    a.project-link:hover {
-      color: #ffffff;
-      text-shadow: 0 0 5px #73b1ff, 0 0 10px #73b1ff;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
   </style>
 </head>
-
 <body>
   <div id="tsparticles"></div>
+
   <header>
+    <img src="naiquipicture.png" alt="Naiqui Armendariz">
     <h1>Naiqui M. Armendariz</h1>
     <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
   </header>
@@ -202,18 +157,15 @@
     <p>Hello! I’m Naiqui Armendariz, an aerospace and mechanical engineering student passionate about sustainability, STEM outreach, and space system design. I believe in empowering communities through knowledge and innovation.</p>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><strong>WERC 2025:</strong> Wind-powered water filtration system for wildfire restoration.
-        <br><a href="https://naikixtasy.github.io/werc-2025-project/" class="project-link" target="_blank">🌐 View full project website</a>
-      </li>
-      <li><strong>Martian Greenhouse:</strong> Mentorship with NASA-led project on food systems for Mars.
-        <br><a href="martian_greenhouse.html" class="project-link" target="_blank">🛰️ View full project webpage</a>
-      </li>
-      <li><strong>SSEP Mission 1:</strong> Microgravity experiment with cactus mucilage for water purification.
-        <br><a href="ssep_project.html" class="project-link" target="_blank">🚀 View full project page</a>
-      </li>
+    <ul style="list-style: none; padding: 0;">
+      <li><strong>WERC 2025:</strong> Wind-powered water filtration system for wildfire restoration.  
+        <br><a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">🌐 View full project website</a></li><br>
+      <li><strong>Martian Greenhouse:</strong> Mentorship with NASA-led project on food systems for Mars.  
+        <br><a href="martian_greenhouse.html" target="_blank">🚀 View full project webpage</a></li><br>
+      <li><strong>SSEP Mission:</strong> Research on cactus mucilage for water purification in space.  
+        <br><a href="ssep_project.html" target="_blank">🔬 View full project webpage</a></li>
     </ul>
   </section>
 
@@ -224,29 +176,25 @@
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>If you’d like to collaborate or learn more, feel free to reach out!</p>
-    <form action="mailto:naikixtasy86@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" required placeholder="Your Name">
-      <input type="email" name="email" required placeholder="Your Email">
-      <textarea name="message" rows="5" required placeholder="Type your message here..."></textarea>
-      <button type="submit">🚀 Send Message</button>
+    <p>If you'd like to collaborate or learn more, feel free to reach out!</p>
+    <form action="mailto:naikixtasy86@gmail.com" method="POST" enctype="text/plain" style="max-width:500px;margin:auto;">
+      <input type="text" name="Name" placeholder="Your Name" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;">
+      <input type="email" name="Email" placeholder="Your Email" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;">
+      <textarea name="Message" placeholder="Type your message here..." rows="5" style="width:100%;margin:10px 0;padding:10px;background:#2d0b45;color:white;border:none;border-radius:5px;"></textarea>
+      <button type="submit" style="background-color:#9b5de5;color:white;border:none;padding:10px 20px;border-radius:5px;">Send</button>
     </form>
-    <div style="text-align:center; margin-top: 20px;">
-      <p>📧 <a href="mailto:naikixtasy86@gmail.com">naikixtasy86@gmail.com</a></p>
-      <p>🔗 <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank">Connect on LinkedIn</a></p>
-    </div>
   </section>
 
   <footer>
-    <p>© 2025 Naiqui M. Armendariz</p>
+    <p>© 2025 Naiqui Armendariz</p>
   </footer>
 
   <audio autoplay loop hidden>
     <source src="space-theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
   <script>
-    // Particles
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       background: { color: "transparent" },
@@ -270,7 +218,6 @@
       }
     });
 
-    // Back to Top Button
     const backToTop = document.getElementById("backToTop");
     window.onscroll = () => {
       backToTop.style.display = window.scrollY > 200 ? "block" : "none";
