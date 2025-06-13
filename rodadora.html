@@ -3,40 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>La Rodadora Workshop — Naiqui Armendariz</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>La Rodadora Workshop | Naiqui M. Armendariz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body { margin:0; font-family:'Segoe UI',sans-serif; background:#12002b; color:#fff; }
-    header { padding:2rem; text-align:center; background:#1a0c2f; }
-    header h1 { margin:0; font-size:2rem; color:#dbaaff; }
-    nav { display:flex; justify-content:center; gap:1.5rem; background:#1a0c2f; padding:.5rem 0; }
-    nav a { color:#fff; text-decoration:none; font-weight:600; transition:color .3s; }
-    nav a:hover { color:#a64ac9; }
-    section { padding:2rem 10%; max-width:800px; margin:0 auto; }
-    img, video { max-width:100%; border-radius:10px; box-shadow:0 0 15px rgba(155,93,229,0.5); }
-    footer { text-align:center; padding:1rem; font-size:.85rem; color:#ccc; background:#12002b; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1b0033, #0d001a);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2e004f;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      color: #dbaaff;
+    }
+    .container {
+      padding: 2rem 10%;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #ffe6ff;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .video-wrapper, .image-wrapper {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    video {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+    .image-wrapper img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    .back-link {
+      display: block;
+      margin: 3rem auto 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: #9b5de5;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-shadow: 0 0 6px #bb86fc;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #ccc;
+      padding: 2rem 1rem;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>“¡Ensayo y Error! Tierra Llamando a las Chicas”</h1>
+    <h1>🌟 La Rodadora STEM Workshop</h1>
   </header>
 
-  <nav>
-    <a href="index.html#selected-projects">Back to Home</a>
-    <a href="index.html#involvement">Involvement</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+  <div class="container">
+    <h2>Empowering Future Scientists & Engineers</h2>
+    <p>
+      In 2020, I led a live workshop at <strong>La Rodadora Interactive Space</strong> in Ciudad Juárez, Mexico, as part of the “Chicas con Ciencia” week powered by Microsoft. This initiative brought STEM to life for young girls through creative experiments, real-world technology demonstrations, and a personal message of inclusion, resilience, and curiosity.
+    </p>
 
-  <section>
-    <p><strong>Date:</strong> November 2020 | <strong>Location:</strong> La Rodadora Espacio Interactivo (Online & Ciudad Juárez)</p>
-    <p>I designed and delivered a live, hands-on STEM workshop to empower girls in engineering, biology, astronomy, and art. In partnership with Microsoft and La Rodadora, I built interactive demos and Q&A sessions to boost female engagement in STEM by 30%.</p>
-    <img src="rodadora.jpg" alt="La Rodadora STEM Workshop">
-    <video src="rodadora_event.mp4" controls style="margin-top:1rem;">Your browser does not support video.</video>
-  </section>
+    <div class="video-wrapper">
+      <video controls poster="rodadora.jpg">
+        <source src="rodadora_event.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p style="margin-top: 0.5rem;">🎥 Live STEM Workshop Recording</p>
+    </div>
+
+    <div class="image-wrapper">
+      <img src="rodadora.jpg" alt="Rodadora Event Poster" />
+      <p style="margin-top: 0.5rem;">📸 Event Poster – 'Tierra Llamando a las Chicas'</p>
+    </div>
+
+    <a href="index.html" class="back-link">⬅️ Back to Homepage</a>
+  </div>
 
   <footer>
-    <p>© 2025 Naiqui M. Armendariz</p>
+    <p>© 2025 Naiqui M. Armendariz | STEM Outreach & Education</p>
   </footer>
+
 </body>
 </html>
