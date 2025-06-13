@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naiqui M. Armendariz</title>
@@ -9,292 +8,281 @@
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
     * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #0d001a, #1b0033);
-  color: #fff;
-  overflow-x: hidden;
-}
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d001a, #1b0033);
+      color: #fff;
+      overflow-x: hidden;
+      text-align: justify;
+    }
 
-#tsparticles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-header {
-  background-image: url('nebulosa.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 3rem 1rem;
-  text-align: center;
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
-}
-header img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 4px solid #9b5de5;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-header h1 {
-  font-size: 2.5rem;
-}
-header p {
-  font-size: 1.1rem;
-  font-weight: 300;
-  margin-top: 0.5rem;
-}
+    header {
+      background-image: url('nebulosa.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  padding: 1rem;
-  font-size: 1rem;
-  z-index: 10;
-}
-nav a, nav button {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  position: relative;
-}
-nav a::after, nav button::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #9b5de5;
-  transition: width .3s;
-}
-nav a:hover::after, nav button:hover::after {
-  width: 100%;
-}
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #9b5de5;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
 
-section {
-  padding: 4rem 10%;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: justify;
-}
+    header h1 {
+      font-size: 2.5rem;
+    }
 
-h2 {
-  color: #dbaaff;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
 
-.about-card {
-  padding: 2rem 0;
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      z-index: 10;
+    }
 
-.projects ul,
-.experience ul,
-.involvement ul {
-  list-style: none;
-  padding: 0;
-}
-.projects li,
-.experience li,
-.involvement li {
-  margin-bottom: 1.5rem;
-}
-.projects strong,
-.experience strong,
-.involvement strong {
-  color: #94f0ff;
-}
-.projects a {
-  text-decoration: none;
-}
+    nav a, nav button {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
 
-.project-btn {
-  display: inline-block;
-  background: linear-gradient(to right, #9b5de5, #40a4f5);
-  color: white;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
-}
-.project-btn:hover {
-  background: linear-gradient(to right, #b86bff, #57bfff);
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-}
-.projects li a.project-btn {
-  display: inline-block;
-  margin-top: 0.5rem;
-}
+    nav a::after, nav button::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #9b5de5;
+      transition: width .3s;
+    }
 
-.involvement-columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-.involvement-column {
-  flex: 1;
-  min-width: 280px;
-}
-.involvement-column h3 {
-  color: #fbbdff;
-  margin-bottom: 1rem;
-}
-.involvement-column ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #fff;
-}
+    nav a:hover::after, nav button:hover::after {
+      width: 100%;
+    }
 
-#contact {
-  text-align: center;
-  padding: 2rem;
-}
-#contact a {
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 12px 24px;
-  display: inline-block;
-  background: linear-gradient(to right, #a64ac9, #40a4f5);
-  transition: 0.3s ease;
-  text-decoration: none;
-}
-#contact a:hover {
-  background: linear-gradient(to right, #e27aff, #58c6ff);
-}
+    section {
+      padding: 4rem 10%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-#backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #9b5de5;
-  color: #fff;
-  border: none;
-  padding: .8rem;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  z-index: 999;
-}
+    h2 {
+      color: #dbaaff;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-footer {
-  text-align: center;
-  margin: 3rem 0;
-  font-size: 0.85rem;
-  color: #ccc;
-}
+    .projects li,
+    .experience li,
+    .involvement li {
+      margin-bottom: 1.5rem;
+    }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8rem;
-  }
-  nav {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  section {
-    padding: 2rem 5%;
-  }
-  .project-btn {
-    display: block;
-    width: fit-content;
-    margin-top: 0.5rem;
-  }
-  .involvement-columns {
-    flex-direction: column;
-  }
-}
+    .projects strong,
+    .experience strong,
+    .involvement strong {
+      color: #94f0ff;
+    }
 
+    .project-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #9b5de5, #40a4f5);
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .project-btn:hover {
+      background: linear-gradient(to right, #b86bff, #57bfff);
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    .involvement-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+
+    .involvement-column {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .involvement-column h3 {
+      color: #fbbdff;
+      margin-bottom: 1rem;
+    }
+
+    .involvement-column ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    #contact {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #contact a {
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      padding: 12px 24px;
+      display: inline-block;
+      background: linear-gradient(to right, #a64ac9, #40a4f5);
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      background: linear-gradient(to right, #e27aff, #58c6ff);
+    }
+
+    footer {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      section {
+        padding: 2rem 5%;
+      }
+
+      .project-btn {
+        display: block;
+        width: fit-content;
+        margin-top: 0.5rem;
+      }
+
+      .involvement-columns {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 <div id="tsparticles"></div>
-<header>
-  <img src="naiqui.jpg" alt="Naiqui Armendariz">
-  <h1>Naiqui M. Armendariz</h1>
-  <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
-</header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#values">Values & Vision</a>
-  <a href="#selected-projects">Selected Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#involvement">Involvement</a>
-  <a href="#contact">Contact</a>
-  <a href="es.html" title="Ver sitio en español">Español 🌎</a>
-  <button id="muteBtn" title="Toggle Music">🔊</button>
-</nav>
+<!-- CONTENIDO DEL BODY A PARTIR DE AQUÍ -->
+<!-- ... (usa tu contenido de secciones como #about, #values, etc.) ... -->
 
-
-<button id="backToTop" title="Back to Top">⬆️</button>
+<script>
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: { color: "transparent" },
+    particles: {
+      number: { value: 60 },
+      size: { value: 2 },
+      move: { enable: true, speed: 0.4 },
+      opacity: { value: 0.5 },
+      color: { value: "#ffffff" },
+      links: { enable: true, color: "#ffffff", distance: 100 }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "repulse" },
+        onClick: { enable: true, mode: "push" }
+      },
+      modes: {
+        repulse: { distance: 80 },
+        push: { quantity: 4 }
+      }
+    }
+  });
+</script>
+</body>
+</html>
 <section id="about">
   <h2>👩‍🚀 About Me</h2>
-  <div class="about-card">
-    <p>
-      I am <strong>Naiqui M. Armendariz</strong>, a double major in Aerospace and Mechanical Engineering with extensive hands-on experience in advanced prototyping, structural analysis, automation, and multidisciplinary system design. My academic and professional journey bridges engineering fundamentals with real-world applications—ranging from ISS-flown experiments and microgravity materials research to award-winning environmental systems and rapid-prototyping using 3D printing technologies.
-    </p>
-    <p>
-      My skillset includes Finite Element Analysis (ANSYS), CAD/CAE (SolidWorks, CATIA), thermomechanical design, mounting system integration, Python automation, and hardware interfacing with sensors and microcontrollers (ESP32, Arduino). I’ve applied these tools in both research and industry settings—including an internship with Supernal (Hyundai's eVTOL division), where I contributed to mechanical mounting systems for future air mobility platforms.
-    </p>
-    <p>
-      I’ve led and contributed to high-impact, cross-disciplinary projects such as:
-      <ul>
-        <li>Designing and testing microgravity samples for the RISE Lab at EPCC, at NMSU created mechanical parts using FEA and thermal residual stress analysis.</li>
-        <li>Developing a wind-powered water filtration system recognized with the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
-        <li>Co-developing an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC’s Annual Colloquium.</li>
-      </ul>
-    </p>
-    <p>
-      Beyond engineering, I’m the founder of several automation and educational outreach initiatives, combining technical expertise with accessible solutions for underserved communities. I’ve volunteered across international STEM programs, contributed to public cultural forums, and built internal tools that simplify workflows and training for academic institutions.
-    </p>
-    <p>
-      I bring a rare combination of technical depth, prototyping speed, design intuition, and social impact awareness—ready to contribute to projects in aerospace systems, sustainable engineering, and advanced R&D environments.
-    </p>
-  </div>
+  <p>
+    I am <strong>Naiqui M. Armendariz</strong>, a double major in Aerospace and Mechanical Engineering with extensive hands-on experience in advanced prototyping, structural analysis, automation, and multidisciplinary system design. My academic and professional journey bridges engineering fundamentals with real-world applications—ranging from ISS-flown experiments and microgravity materials research to award-winning environmental systems and rapid-prototyping using 3D printing technologies.
+  </p>
+  <p>
+    My skillset includes Finite Element Analysis (ANSYS), CAD/CAE (SolidWorks, CATIA), thermomechanical design, mounting system integration, Python automation, and hardware interfacing with sensors and microcontrollers (ESP32, Arduino). I’ve applied these tools in both research and industry settings—including an internship with Supernal (Hyundai's eVTOL division), where I contributed to mechanical mounting systems for future air mobility platforms.
+  </p>
+  <p>
+    I’ve led and contributed to high-impact, cross-disciplinary projects such as:
+  </p>
+  <ul>
+    <li>Designing and testing microgravity samples for the RISE Lab at EPCC, at NMSU created mechanical parts using FEA and thermal residual stress analysis.</li>
+    <li>Developing a wind-powered water filtration system recognized with the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
+    <li>Co-developing an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC’s Annual Colloquium.</li>
+  </ul>
+  <p>
+    Beyond engineering, I’m the founder of several automation and educational outreach initiatives, combining technical expertise with accessible solutions for underserved communities. I’ve volunteered across international STEM programs, contributed to public cultural forums, and built internal tools that simplify workflows and training for academic institutions.
+  </p>
+  <p>
+    I bring a rare combination of technical depth, prototyping speed, design intuition, and social impact awareness—ready to contribute to projects in aerospace systems, sustainable engineering, and advanced R&D environments.
+  </p>
 </section>
-
 <section id="values">
   <h2>💫 My Values & Vision</h2>
-  <div class="about-card">
-    <p>At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:</p>
-    <ul style="margin-top:1rem; line-height:1.6;">
-      <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
-      <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
-      <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
-      <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
-      <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
-    </ul>
-    <p style="margin-top:1rem;">My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.</p>
-  </div>
-<section>
+  <p>
+    At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:
+  </p>
+  <ul style="margin-top:1rem; line-height:1.6;">
+    <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
+    <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
+    <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
+    <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
+    <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
+  </ul>
+  <p style="margin-top:1rem;">
+    My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.
+  </p>
+</section>
 <section id="selected-projects" class="projects fade-in">
   <h2>🚀 Selected Projects</h2>
   <ul>
@@ -316,8 +304,6 @@ footer {
     </li>
   </ul>
 </section>
-
-
 <section id="experience" class="fade-in">
   <h2>🛠️ Experience</h2>
   <ul>
@@ -326,12 +312,11 @@ footer {
     <li><strong>🧫 EPCC Lab Assistant</strong> (2023–2024): Chemistry and biology equipment maintenance; safety protocol development.</li>
     <li><strong>🧰 Freelance Automation Expert</strong> (2020–2023): Built 3D systems, Arduino rigs, and AI tools for education and research.</li>
   </ul>
+</section>
 <section id="awards" class="fade-in-scroll">
   <h2>🤝 Involvement & Awards</h2>
-
   <div class="involvement-columns">
 
-    <!-- Columna 1: Awards -->
     <div class="involvement-column">
       <h3>🏅 Awards & Leadership</h3>
       <ul>
@@ -344,7 +329,6 @@ footer {
       </ul>
     </div>
 
-    <!-- Columna 2: Affiliations -->
     <div class="involvement-column">
       <h3>🔗 Professional Affiliations</h3>
       <ul>
@@ -359,119 +343,20 @@ footer {
 
   </div>
 </section>
-
-
-<section id="contact" class="card fade-in-scroll" style="max-width: 600px; margin: auto; text-align: center;">
-  <h2 style="font-size: 2rem; color: #e5ccff;">✨ Contact Me</h2>
+<section id="contact">
+  <h2>✨ Contact Me</h2>
   <p style="color: #ccc; font-size: 1.05rem; margin-bottom: 1.5rem;">
     Got questions or ideas? I'd love to hear from you!
   </p>
 
-  <div style="
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(155, 93, 229, 0.2);
-    backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  ">
-    <a href="mailto:naikixtasy86@gmail.com" style="
-      background: linear-gradient(to right, #a64ac9, #40a4f5);
-      padding: 12px 24px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    ">📨 Write Me</a>
+  <a href="mailto:naikixtasy86@gmail.com">📨 Write Me</a>
 
-    <div style="margin-top: 1rem;">
-      <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #0e76a8;">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/naikixtasy" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #f06292;">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
+  <div style="margin-top: 1.5rem;">
+    <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #0e76a8;">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/naikixtasy" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #f06292;">
+      <i class="fab fa-github"></i>
+    </a>
   </div>
 </section>
-
-
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Naiqui M. Armendariz — Made with 💜 and rocket fuel</p>
-  </footer>
-
-  <!-- Back to Top Button -->
-  <button id="backToTop" title="Back to Top">⬆️</button>
-
-  <!-- Background Audio -->
-  <audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
-  <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
-
-  <!-- JavaScript -->
-  <script>
-    // Particle background
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: "transparent" },
-      particles: {
-        number: { value: 60 },
-        size: { value: 2 },
-        move: { enable: true, speed: 0.4 },
-        opacity: { value: 0.5 },
-        color: { value: "#ffffff" },
-        links: { enable: true, color: "#ffffff", distance: 100 }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          onClick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 80 },
-          push: { quantity: 4 }
-        }
-      }
-    });
-
-    // Back to top button
-    const backBtn = document.getElementById('backToTop');
-    window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-    backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Audio Mute Toggle
-    const bg = document.getElementById('bgMusic');
-    const muteBtn = document.getElementById('muteBtn');
-
-    muteBtn.addEventListener('click', () => {
-      if (bg.paused) {
-        bg.play();
-        muteBtn.textContent = '🔈';
-      } else {
-        bg.pause();
-        muteBtn.textContent = '🔊';
-      }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      muteBtn.textContent = bg.paused ? '🔊' : '🔈';
-    });
-
-    // Optional hover sound effect
-    document.querySelectorAll('nav a, nav button').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        const s = document.getElementById('hoverSound');
-        s.currentTime = 0;
-        s.play();
-      });
-    });
-  </script>
-</body>
-</html>
