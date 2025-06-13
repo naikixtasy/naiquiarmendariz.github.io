@@ -10,14 +10,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right,#0d001a,#1b0033);
+      background: linear-gradient(to bottom right, #0d001a, #1b0033);
       color: #fff;
       overflow-x: hidden;
     }
     #tsparticles {
-      position: fixed;
-      width: 100%; height: 100%;
-      z-index: -1;
+      position: fixed; width: 100%; height: 100%; z-index: -1;
     }
     header {
       background-image: url('nebulosa.jpg');
@@ -33,10 +31,7 @@
       object-fit: cover;
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+    header h1 { font-size: 2.5rem; margin: 0; }
     header p {
       font-size: 1.1rem;
       margin-top: .5rem;
@@ -45,13 +40,12 @@
     nav {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      background: rgba(0,0,0,0.6);
+      gap: 2rem;
+      background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(6px);
-      position: sticky;
-      top: 0;
+      position: sticky; top: 0;
       padding: 1rem 0;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       z-index: 10;
     }
     nav a, nav button {
@@ -62,19 +56,19 @@
       font-weight: 600;
       cursor: pointer;
       position: relative;
+      transition: color .3s, text-shadow .3s;
     }
     nav a::after, nav button::after {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
       background: #9b5de5;
       transition: width .3s;
     }
     nav a:hover, nav button:hover {
-      color: #9b5de5;
+      color: #a64ac9;
+      text-shadow: 0 0 6px #a64ac9;
     }
     nav a:hover::after, nav button:hover::after {
       width: 100%;
@@ -103,28 +97,24 @@
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    .projects ul,
-    .experience ul,
-    .involvement ul {
+    .projects ul, .experience ul, .involvement ul {
       list-style: none;
       padding: 0;
     }
-    .projects li,
-    .experience li,
-    .involvement li {
+    .projects li, .experience li, .involvement li {
       margin-bottom: 1.5rem;
     }
-    .projects strong,
-    .experience strong,
-    .involvement strong {
+    .projects strong, .experience strong, .involvement strong {
       color: #94f0ff;
     }
-    .projects a {
-      color: #94f0ff;
+    .projects a, #contact a {
+      color: #82eaff;
       text-decoration: none;
+      transition: color .3s, text-shadow .3s;
     }
-    .projects a:hover {
-      text-decoration: underline;
+    .projects a:hover, #contact a:hover {
+      color: #ffb3ff;
+      text-shadow: 0 0 8px #ffb3ff;
     }
     #contact {
       background: #1a0c2f;
@@ -132,10 +122,6 @@
       padding: 2rem;
       box-shadow: 0 0 20px rgba(155,100,255,0.3);
       text-align: center;
-    }
-    #contact a {
-      color: #82eaff;
-      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -206,6 +192,7 @@
       <li><strong>WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration. <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">View</a></li>
       <li><strong>Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars. <a href="martian_greenhouse.html" target="_blank">View</a></li>
       <li><strong>SSEP Mission 1 (Award-Winning):</strong> Cactus mucilage water purification research selected to fly aboard ISS; 1st Place Outstanding Achievement in Student Research at EPCC Annual Research Colloquium 2012. <a href="ssep_project.html" target="_blank">View</a></li>
+      <li><strong>La Rodadora Workshop:</strong> Live STEM workshop empowering girls — moved to its own page. <a href="rodadora.html" target="_blank">View</a></li>
     </ul>
   </section>
 
@@ -222,24 +209,13 @@
   <section id="involvement" class="involvement">
     <h2>Leadership & Involvement</h2>
     <ul>
-      <li>
-        <strong>Terry McManus Outstanding Student Award</strong> – 35th WERC Environmental Design Contest (Apr 2025): Recognized for excellence and shared cash prize with team.<br>
-        <img src="werc_award.png" alt="WERC Award Screenshot" style="max-width:100%; margin-top:.5rem;">
-      </li>
+      <li><strong>Terry McManus Outstanding Student Award</strong> – 35th WERC Contest (Apr 2025): Recognized for excellence and shared prize. <img src="werc_award.png" alt="WERC Award Screenshot" style="max-width:100%; margin-top:.5rem;"></li>
       <li><strong>TRIO STEM-H Delegate</strong> – TRIO Day Conference, NMSU (Feb 2025)</li>
-      <li><strong>Diversity Scholar, AIAA SciTech Forum</strong> (Jan 2023): Awarded scholarship; participated in aerospace workshops.</li>
-      <li><strong>Team Leader, 35th WERC Environmental Design Contest</strong> – NMSU (Apr 2025): Led wind-powered water filtration subteam; authored cost appendix.</li>
-      <li><strong>Participant, SHPE Regional Leadership Development Conference</strong> (Nov 2022)</li>
-      <li><strong>Judge, Flight Endurance Competition</strong> – New Mexico TSA (2022)</li>
+      <li><strong>Diversity Scholar, AIAA SciTech Forum</strong> (Jan 2023)</li>
       <li><strong>Studio G CEO Certification</strong> – Studio G, NMSU (Fall 2024)</li>
-      <li><strong>ROLE Program Participant</strong> – NMSU (Fall 2022–Spring 2023): Conducted robotics & microgravity experiments in NASA-partnered lab.</li>
-      <li><strong>Volunteer Mentor, One Voice 4 Change</strong> (Jun 2025–Present): Mentoring global youth in STEM fundamentals.</li>
-      <li>
-        <strong>Volunteer Workshop Presenter, “¡Ensayo y Error! Tierra Llamando a las Chicas”</strong> – La Rodadora (Nov 2020): Led live STEM workshops for girls.<br>
-        <img src="rodadora.jpg" alt="La Rodadora Workshop" style="max-width:100%; margin-top:.5rem;"><br>
-        <video src="rodadora_event.mp4" controls style="max-width:100%; margin-top:.5rem;">Your browser does not support video.</video>
-      </li>
-      <li><strong>Organizing Committee Member, Foro Público de las Artes Plásticas de la Frontera Norte</strong> – Centro Cultural de las Fronteras (Feb 2020)</li>
+      <li><strong>ROLE Program Participant</strong> – NMSU (Fall 2022–Spring 2023)</li>
+      <li><strong>Volunteer Mentor, One Voice 4 Change</strong> (Jun 2025–Present)</li>
+      <li><strong>Organizing Committee Member</strong> – Foro Público de las Artes Plásticas (Feb 2020)</li>
     </ul>
   </section>
 
@@ -257,31 +233,21 @@
 
   <script>
     tsParticles.load("tsparticles", {
-      fullScreen:{enable:false},
-      background:{color:"transparent"},
+      fullScreen:{enable:false}, background:{color:"transparent"},
       particles:{
-        number:{value:60},
-        size:{value:2},
-        move:{enable:true,speed:0.4},
-        opacity:{value:0.5},
-        color:{value:"#ffffff"},
-        links:{enable:true,color:"#ffffff",distance:100}
+        number:{value:60}, size:{value:2},
+        move:{enable:true,speed:0.4}, opacity:{value:0.5},
+        color:{value:"#ffffff"}, links:{enable:true,color:"#ffffff",distance:100}
       },
       interactivity:{
-        events:{
-          onHover:{enable:true,mode:"repulse"},
-          onClick:{enable:true,mode:"push"}
-        },
-        modes:{
-          repulse:{distance:80},
-          push:{quantity:4}
-        }
+        events:{onHover:{enable:true,mode:"repulse"},onClick:{enable:true,mode:"push"}},
+        modes:{repulse:{distance:80},push:{quantity:4}}
       }
     });
 
     const backBtn = document.getElementById('backToTop');
     window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-    backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    backBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
 
     const bg = document.getElementById('bgMusic'),
           muteBtn = document.getElementById('muteBtn');
@@ -289,7 +255,6 @@
       if (bg.paused) { bg.play(); muteBtn.textContent = '🔈'; }
       else           { bg.pause(); muteBtn.textContent = '🔊'; }
     };
-    window.addEventListener('click', () => { if (bg.paused) bg.play().catch(() => {}); });
 
     document.querySelector('.about-card')?.addEventListener('mouseenter', () => {
       const s = document.getElementById('hoverSound');
