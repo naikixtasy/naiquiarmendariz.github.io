@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,6 +20,16 @@
       overflow-x: hidden;
       text-align: justify;
     }
+	tsparticles {
+ 	 position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
     header {
       background-image: url('nebulosa.jpg');
       background-size: cover;
