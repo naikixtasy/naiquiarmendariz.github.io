@@ -7,98 +7,294 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
-    body { margin:0; font-family:'Segoe UI',sans-serif; background:linear-gradient(to bottom right,#0d001a,#1b0033); color:#fff; overflow-x:hidden; }
-    #tsparticles { position:fixed; width:100%; height:100%; z-index:-1; }
-    header { background-image:url('nebulosa.jpg'); background-size:cover; padding:3rem 1rem; text-align:center; box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.4); }
-    header img { width:180px; height:180px; border-radius:50%; border:4px solid #9b5de5; object-fit:cover; margin-bottom:1rem; }
-    header h1 { font-size:2.5rem; margin:0; }
-    header p { font-size:1.1rem; margin-top:.5rem; font-weight:300; }
-    nav { display:flex; justify-content:center; background:rgba(0,0,0,0.6); backdrop-filter:blur(6px); position:sticky; top:0; padding:.5rem; z-index:10; }
-    nav a, nav button { color:#fff; background:none; border:none; margin:0 1rem; font-weight:600; cursor:pointer; position:relative; }
-    nav a::after, nav button::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:#9b5de5; transition:width .3s; }
-    nav a:hover, nav button:hover { color:#9b5de5; }
-    nav a:hover::after, nav button:hover::after { width:100%; }
-    section { padding:4rem 10%; max-width:1000px; margin:0 auto; text-align:left; }
-    h2 { color:#dbaaff; font-size:2rem; margin-bottom:1rem; text-align:center; }
-    .about-card { background:rgba(25,0,40,0.7); border-radius:20px; padding:2rem; box-shadow:0 0 20px rgba(155,93,229,0.4); animation:floatCard 6s ease-in-out infinite; transition:transform .4s,box-shadow .4s; }
-    @keyframes floatCard {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-    .projects ul, .experience ul, .involvement ul { list-style:none; padding:0; }
-    .projects li, .experience li, .involvement li { margin-bottom:1.5rem; }
-    .projects strong, .experience strong, .involvement strong { color:#94f0ff; }
-    .projects a { color:#94f0ff; text-decoration:none; }
-    .projects a:hover { text-decoration:underline; }
-    #contact { background:#1a0c2f; border-radius:20px; padding:2rem; box-shadow:0 0 20px rgba(155,100,255,0.3); }
-    #contact form { display:flex; flex-wrap:wrap; gap:1rem; }
-    #contact input, textarea { flex:1 1 45%; padding:1rem; border:none; border-radius:10px; background:#290c40; color:#fff; }
-    #contact textarea { flex:1 1 100%; resize:vertical; }
-    #contact button { background:linear-gradient(to right,#8e44ad,#3498db); color:#fff; border:none; padding:1rem 2rem; border-radius:10px; cursor:pointer; }
-    #contact button:hover { background:linear-gradient(to right,#9b59b6,#2980b9); }
-    footer { text-align:center; margin:3rem 0; font-size:.85rem; color:#ccc; }
-    #backToTop { position:fixed; bottom:20px; right:20px; background:#9b5de5; color:#fff; border:none; padding:.8rem; font-size:1.2rem; border-radius:50%; cursor:pointer; display:none; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right,#0d001a,#1b0033);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    #tsparticles {
+      position: fixed;
+      width: 100%; height: 100%;
+      z-index: -1;
+    }
+    header {
+      background-image: url('nebulosa.jpg');
+      background-size: cover;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4);
+    }
+    header img {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      border: 4px solid #9b5de5;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: .5rem;
+      font-weight: 300;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      z-index: 10;
+    }
+    nav a, nav button {
+      color: #fff;
+      background: none;
+      border: none;
+      padding: .5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+    }
+    nav a::after, nav button::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #9b5de5;
+      transition: width .3s;
+    }
+    nav a:hover, nav button:hover {
+      color: #9b5de5;
+    }
+    nav a:hover::after, nav button:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 4rem 10%;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    h2 {
+      color: #dbaaff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .about-card {
+      background: rgba(25,0,40,0.7);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(155,93,229,0.4);
+      animation: floatCard 6s ease-in-out infinite;
+      transition: transform .4s, box-shadow .4s;
+    }
+    @keyframes floatCard {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .projects ul,
+    .experience ul,
+    .involvement ul {
+      list-style: none;
+      padding: 0;
+    }
+    .projects li,
+    .experience li,
+    .involvement li {
+      margin-bottom: 1.5rem;
+    }
+    .projects strong,
+    .experience strong,
+    .involvement strong {
+      color: #94f0ff;
+    }
+    .projects a {
+      color: #94f0ff;
+      text-decoration: none;
+    }
+    .projects a:hover {
+      text-decoration: underline;
+    }
+    #contact {
+      background: #1a0c2f;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(155,100,255,0.3);
+      text-align: center;
+    }
+    #contact a {
+      color: #82eaff;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      margin: 3rem 0;
+      font-size: .85rem;
+      color: #ccc;
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background: #9b5de5;
+      color: #fff;
+      border: none;
+      padding: .8rem;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
   </style>
 </head>
 <body>
   <div id="tsparticles"></div>
+
   <header>
     <img src="naiqui.jpg" alt="Naiqui Armendariz">
     <h1>Naiqui M. Armendariz</h1>
     <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
   </header>
+
   <nav>
     <a href="#about">About</a>
+    <a href="#values">Values & Vision</a>
     <a href="#selected-projects">Selected Projects</a>
     <a href="#experience">Experience</a>
     <a href="#involvement">Involvement</a>
-    <button id="muteBtn" title="Toggle Music">🔊</button>
     <a href="#contact">Contact</a>
+    <button id="muteBtn" title="Toggle Music">🔊</button>
   </nav>
+
   <button id="backToTop" title="Back to Top">⬆️</button>
+
   <section id="about">
     <h2>About Me</h2>
     <div class="about-card">
       <p>I'm <strong>Naiqui M. Armendariz</strong> — an Aerospace & Mechanical Engineering student passionate about innovation, sustainability, and automation. I mentor international STEM initiatives, contribute to NASA-affiliated research, and prototype advanced systems with Python, 3D printing, and laser cutting.</p>
     </div>
   </section>
+
+  <section id="values">
+    <h2>My Values & Vision</h2>
+    <div class="about-card">
+      <p>At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:</p>
+      <ul style="margin-top:1rem; line-height:1.6;">
+        <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
+        <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
+        <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
+        <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
+        <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
+      </ul>
+      <p style="margin-top:1rem;">My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.</p>
+    </div>
+  </section>
+
   <section id="selected-projects" class="projects">
     <h2>Selected Projects</h2>
     <ul>
       <li><strong>WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration. <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">View</a></li>
       <li><strong>Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars. <a href="martian_greenhouse.html" target="_blank">View</a></li>
-      <li><strong>SSEP Mission 1:</strong> Cactus mucilage water purification research aboard ISS. <a href="ssep_project.html" target="_blank">View</a></li>
+      <li><strong>SSEP Mission 1 (Award-Winning):</strong> Cactus mucilage water purification research selected to fly aboard ISS; 1st Place Outstanding Achievement in Student Research at EPCC Annual Research Colloquium 2012. <a href="ssep_project.html" target="_blank">View</a></li>
     </ul>
   </section>
-  <section id="experience">
+
+  <section id="experience" class="experience">
     <h2>Professional Experience</h2>
     <ul>
-      <li><strong>RISE Microgravity Research Lab Assistant</strong> (Jan 2025–Present): Conducted FEA of A36 steel samples; led design reviews; modeled eVTOL mounting prototypes.</li>
-      <li><strong>Mounting Systems Intern, eVTOL Division</strong> (Jun 2024–Dec 2024): Designed components; authored engineering standards; translated fluid-dynamics data.</li>
-      <li><strong>Lab Assistant, Biology & Chemistry</strong> (Aug 2023–May 2024): Managed lab setups; authored safety protocols; trained assistants.</li>
-      <li><strong>3D Printing & Electronics Specialist (Freelance)</strong> (Jan 2020–Jul 2023): Operated 3D printers; developed automation rigs; led workshops.</li>
+      <li><strong>RISE Microgravity Research Lab Assistant</strong> (Jan 2025–Present): Conducted FEA of A36 steel samples; led design reviews; modeled eVTOL mounting prototypes.</li>
+      <li><strong>Mounting Systems Intern, eVTOL Division</strong> (Jun 2024–Dec 2024): Designed components; authored engineering standards; translated fluid-dynamics data.</li>
+      <li><strong>Lab Assistant, Biology & Chemistry</strong> (Aug 2023–May 2024): Managed lab setups; authored safety protocols; trained assistants.</li>
+      <li><strong>3D Printing & Electronics Specialist (Freelance)</strong> (Jan 2020–Jul 2023): Operated 3D printers; developed automation rigs; led workshops.</li>
     </ul>
   </section>
-  <section id="involvement">
+
+  <section id="involvement" class="involvement">
     <h2>Leadership & Involvement</h2>
     <ul>
-      <li><strong>Terry McManus Outstanding Student Award</strong> – 35th WERC Contest (Apr 2025): Recognized for excellence and shared cash prize with team.</li>
-      <li><strong>ROLE Program Participant</strong> – NMSU (Fall 2022–Spring 2023): Conducted robotics & microgravity experiments in NASA-partnered lab.</li>
-      <li><strong>AIAA SciTech Forum Diversity Scholar</strong> (Jan 2023): Awarded scholarship; participated in aerospace workshops.</li>
-      <li><strong>Volunteer Mentor</strong> – One Voice 4 Change (Jun 2025–Present): Mentoring global youth in STEM fundamentals.</li>
-      <li><strong>Volunteer Presenter</strong> – La Rodadora (Nov 2020): Led live STEM workshops for girls in engineering & astronomy.</li>
-      <li><strong>Organizing Committee Member</strong> – Foro Público de las Artes Plásticas (Feb 2020): Planned cultural forum in Ciudad Juárez.</li>
+      <li>
+        <strong>Terry McManus Outstanding Student Award</strong> – 35th WERC Environmental Design Contest (Apr 2025): Recognized for excellence and shared cash prize with team.<br>
+        <img src="werc_award.png" alt="WERC Award Screenshot" style="max-width:100%; margin-top:.5rem;">
+      </li>
+      <li><strong>TRIO STEM-H Delegate</strong> – TRIO Day Conference, NMSU (Feb 2025)</li>
+      <li><strong>Diversity Scholar, AIAA SciTech Forum</strong> (Jan 2023): Awarded scholarship; participated in aerospace workshops.</li>
+      <li><strong>Team Leader, 35th WERC Environmental Design Contest</strong> – NMSU (Apr 2025): Led wind-powered water filtration subteam; authored cost appendix.</li>
+      <li><strong>Participant, SHPE Regional Leadership Development Conference</strong> (Nov 2022)</li>
+      <li><strong>Judge, Flight Endurance Competition</strong> – New Mexico TSA (2022)</li>
+      <li><strong>Studio G CEO Certification</strong> – Studio G, NMSU (Fall 2024)</li>
+      <li><strong>ROLE Program Participant</strong> – NMSU (Fall 2022–Spring 2023): Conducted robotics & microgravity experiments in NASA-partnered lab.</li>
+      <li><strong>Volunteer Mentor, One Voice 4 Change</strong> (Jun 2025–Present): Mentoring global youth in STEM fundamentals.</li>
+      <li>
+        <strong>Volunteer Workshop Presenter, “¡Ensayo y Error! Tierra Llamando a las Chicas”</strong> – La Rodadora (Nov 2020): Led live STEM workshops for girls.<br>
+        <img src="rodadora.jpg" alt="La Rodadora Workshop" style="max-width:100%; margin-top:.5rem;"><br>
+        <video src="rodadora_event.mp4" controls style="max-width:100%; margin-top:.5rem;">Your browser does not support video.</video>
+      </li>
+      <li><strong>Organizing Committee Member, Foro Público de las Artes Plásticas de la Frontera Norte</strong> – Centro Cultural de las Fronteras (Feb 2020)</li>
     </ul>
   </section>
+
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>📧 <a href="mailto:naikixtasy86@gmail.com" style="color:#82eaff;">naikixtasy86@gmail.com</a> | 🔗 <a href="https://linkedin.com/in/naiquiarmendariz" target="_blank" style="color:#82eaff;">LinkedIn</a></p>
+    <p>📧 <a href="mailto:naikixtasy86@gmail.com">naikixtasy86@gmail.com</a> | 🔗 <a href="https://linkedin.com/in/naiquiarmendariz" target="_blank">LinkedIn</a></p>
   </section>
-  <footer><p>© 2025 Naiqui M. Armendariz</p></footer>
+
+  <footer>
+    <p>© 2025 Naiqui M. Armendariz</p>
+  </footer>
+
   <audio id="bgMusic" loop src="space-theme.mp3"></audio>
   <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
+
   <script>
-    tsParticles.load("tsparticles",{fullScreen:{enable:false},background:{color:"transparent"},particles:{number:{value:60},size:{value:2},move:{enable:true,speed:0.4},opacity:{value:0.5},color:{value:"#ffffff"},links:{enable:true,color:"#ffffff",distance:100}},interactivity:{events:{onHover:{enable:true,mode:"repulse"},onClick:{enable:true,mode:"push"}},modes:{repulse:{distance:80},push:{quantity:4}}});
-    const back= document.getElementById('backToTop');window.onscroll=()=>back.style.display=window.scrollY>200?'block':'none';back.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
-    const bg= document.getElementById('bgMusic'),mute=document.getElementById('muteBtn');mute.onclick=()=>{if(bg.paused){bg.play();mute.textContent='🔈';}else{bg.pause();mute.textContent='🔊';}};window.addEventListener('click',()=>{if(bg.paused) bg.play().catch(()=>{});});
-    document.querySelector('.about-card')?.addEventListener('mouseenter',()=>{const s=document.getElementById('hoverSound');s.currentTime=0;s.play();});
+    tsParticles.load("tsparticles", {
+      fullScreen:{enable:false},
+      background:{color:"transparent"},
+      particles:{
+        number:{value:60},
+        size:{value:2},
+        move:{enable:true,speed:0.4},
+        opacity:{value:0.5},
+        color:{value:"#ffffff"},
+        links:{enable:true,color:"#ffffff",distance:100}
+      },
+      interactivity:{
+        events:{
+          onHover:{enable:true,mode:"repulse"},
+          onClick:{enable:true,mode:"push"}
+        },
+        modes:{
+          repulse:{distance:80},
+          push:{quantity:4}
+        }
+      }
+    });
+
+    const backBtn = document.getElementById('backToTop');
+    window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const bg = document.getElementById('bgMusic'),
+          muteBtn = document.getElementById('muteBtn');
+    muteBtn.onclick = () => {
+      if (bg.paused) { bg.play(); muteBtn.textContent = '🔈'; }
+      else           { bg.pause(); muteBtn.textContent = '🔊'; }
+    };
+    window.addEventListener('click', () => { if (bg.paused) bg.play().catch(() => {}); });
+
+    document.querySelector('.about-card')?.addEventListener('mouseenter', () => {
+      const s = document.getElementById('hoverSound');
+      s.currentTime = 0; s.play();
+    });
   </script>
 </body>
 </html>
