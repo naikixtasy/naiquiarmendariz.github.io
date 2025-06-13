@@ -113,4 +113,26 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+#contact a:hover {
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+#contact i {
+  transition: transform 0.3s ease;
+}
+
+#contact i:hover {
+  transform: scale(1.2);
+}
+#contact a:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+#contact i:hover {
+  color: #ffd6ff;
+}
+
 
