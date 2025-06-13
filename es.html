@@ -7,12 +7,122 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
-    /* (Aquí puedes copiar el mismo CSS de tu archivo original) */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0d001a, #1b0033);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    header {
+      background-image: url('nebulosa.jpg');
+      background-size: cover;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    }
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #9b5de5;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      padding: 1rem;
+      font-size: 1.1rem;
+      z-index: 10;
+    }
+    nav a, nav button {
+      color: #fff;
+      background: none;
+      border: none;
+      padding: .5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      transition: color .3s, text-shadow .3s;
+    }
+    nav a::after, nav button::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #9b5de5;
+      transition: width .3s;
+    }
+    nav a:hover, nav button:hover {
+      color: #a64ac9;
+      text-shadow: 0 0 6px #a64ac9;
+    }
+    nav a:hover::after, nav button:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 4rem 10%;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+    h2 {
+      color: #dbaaff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .about-card {
+      background: rgba(25, 0, 40, 0.7);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(155, 93, 229, 0.4);
+    }
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #9b5de5;
+      color: #fff;
+      border: none;
+      padding: .8rem;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
   </style>
 </head>
+
 <body>
 <div id="tsparticles"></div>
-
 <header>
   <img src="naiqui.jpg" alt="Naiqui Armendariz">
   <h1>Naiqui M. Armendariz</h1>
@@ -24,91 +134,82 @@
   <a href="#values">Valores y Visión</a>
   <a href="#selected-projects">Proyectos</a>
   <a href="#experience">Experiencia</a>
-  <a href="#involvement">Involucramiento</a>
+  <a href="#awards">Involucramiento</a>
   <a href="#contact">Contacto</a>
-  <a href="index.html">English</a>
-  <button id="muteBtn" title="Activar/Desactivar Música">🔊</button>
+  <a href="index.html" title="View in English">🇺🇸 English</a>
+  <button id="muteBtn" title="Música de fondo">🔊</button>
 </nav>
+
 <section id="about">
   <h2>👩‍🚀 Sobre Mí</h2>
   <div class="about-card">
-    <p>
-      Soy <strong>Naiqui M. Armendariz</strong>, estudiante de Ingeniería Aeroespacial y Mecánica con amplia experiencia práctica en prototipado avanzado, análisis estructural, automatización y diseño de sistemas multidisciplinarios. Mi trayectoria académica y profesional conecta fundamentos de la ingeniería con aplicaciones reales, desde experimentos enviados a la EEI hasta tecnologías de purificación en microgravedad y fabricación rápida con impresión 3D.
-    </p>
-    <p>
-      Mi conjunto de habilidades incluye Análisis de Elementos Finitos (ANSYS), CAD/CAE (SolidWorks, CATIA), diseño termo-mecánico, integración de sistemas, automatización con Python y desarrollo de hardware con sensores y microcontroladores (ESP32, Arduino). He aplicado estas herramientas tanto en investigación como en la industria, incluyendo una pasantía con Supernal (la división eVTOL de Hyundai), donde contribuí al diseño de sistemas de montaje para plataformas de movilidad aérea.
-    </p>
-    <p>
-      He liderado y participado en proyectos de alto impacto como:
-      <ul>
-        <li>Diseño y prueba de muestras para microgravedad en el RISE Lab de EPCC y análisis de tensiones térmicas en piezas mecánicas en NMSU.</li>
-        <li>Desarrollo de un sistema de filtración de agua impulsado por viento, premiado con el <strong>Premio Terry McManus</strong> en la competencia WERC 2025.</li>
-        <li>Co-desarrollo de un experimento seleccionado para volar a la EEI mediante el <strong>Programa de Experimentos Estudiantiles en el Espacio (SSEP)</strong>, obteniendo el 1er lugar en el Coloquio de Investigación de EPCC.</li>
-      </ul>
-    </p>
-    <p>
-      Además de la ingeniería, soy fundadora de varias iniciativas de automatización y educación comunitaria, combinando conocimientos técnicos con soluciones accesibles para comunidades desatendidas. He participado como voluntaria en programas internacionales de STEM, foros culturales y el desarrollo de herramientas digitales para instituciones académicas.
-    </p>
-    <p>
-      Aporto una combinación única de profundidad técnica, rapidez en prototipado, intuición en diseño e impacto social — lista para contribuir a proyectos en sistemas aeroespaciales, ingeniería sostenible e investigación avanzada.
-    </p>
+    <p><strong>Soy Naiqui M. Armendariz</strong>, estudiante de Ingeniería Aeroespacial y Mecánica con experiencia práctica en prototipado avanzado, análisis estructural, automatización y diseño de sistemas multidisciplinarios. He trabajado en experimentos enviados a la EEI, concursos de diseño sustentable y sistemas de impresión 3D personalizados.</p>
+    <p>Mis habilidades incluyen análisis de elementos finitos (ANSYS), diseño CAD (SolidWorks, CATIA), desarrollo Python, sensores y microcontroladores (ESP32, Arduino). He aplicado estas herramientas en la industria —incluida una pasantía con Supernal (Hyundai eVTOL)— donde diseñé sistemas de montaje para plataformas de movilidad aérea.</p>
+    <p>He liderado proyectos como:</p>
+    <ul>
+      <li>Diseño de un sistema de filtración eólica para restauración post-incendios (1° lugar en WERC 2025)</li>
+      <li>Investigación en microgravedad con mucílago de nopal para purificación de agua (proyecto enviado a la EEI)</li>
+      <li>Mentoría internacional con la NASA en sistemas sostenibles de alimentos en Marte</li>
+    </ul>
+    <p>También he impulsado iniciativas de divulgación STEM en comunidades marginadas y desarrollado herramientas internas para automatizar procesos académicos. Mi objetivo es aplicar ingeniería con impacto social y enfoque sostenible.</p>
   </div>
 </section>
 <section id="values">
-  <h2>💫 Mis Valores y Visión</h2>
+  <h2>💫 Valores y Visión</h2>
   <div class="about-card">
-    <p>En el centro de mi trabajo hay un compromiso profundo con la humanidad, la integridad y el servicio. Creo que cada solución de ingeniería debe mejorar la vida de las personas y respetar nuestro planeta. Mi brújula personal se guía por los siguientes principios:</p>
+    <p>Mi trabajo está guiado por la humanidad, la ética y el servicio. Cada solución debe mejorar vidas y respetar nuestro planeta. Mis valores son:</p>
     <ul style="margin-top:1rem; line-height:1.6;">
-      <li><strong>Empatía e Inclusión</strong> – Diseñar con compasión para empoderar voces subrepresentadas.</li>
-      <li><strong>Innovación Ética</strong> – Defender tecnologías sostenibles y el uso responsable de la inteligencia artificial.</li>
-      <li><strong>Integridad y Transparencia</strong> – Mantener la honestidad en la investigación, la colaboración y la comunicación.</li>
-      <li><strong>Responsabilidad Ambiental</strong> – Crear sistemas que protejan el medio ambiente para futuras generaciones.</li>
-      <li><strong>Crecimiento y Aprendizaje</strong> – Fomentar la curiosidad, el autoaprendizaje y la educación continua.</li>
+      <li><strong>Empatía e Inclusión</strong> – Diseñar con compasión para amplificar voces diversas.</li>
+      <li><strong>Innovación Ética</strong> – Promover tecnologías responsables y sostenibles.</li>
+      <li><strong>Integridad y Transparencia</strong> – Ser honesto en la investigación, el trabajo y la colaboración.</li>
+      <li><strong>Sostenibilidad</strong> – Crear soluciones que protejan al medio ambiente.</li>
+      <li><strong>Aprendizaje Continuo</strong> – Fomentar la curiosidad y el crecimiento personal.</li>
     </ul>
-    <p style="margin-top:1rem;">Mi visión es un mundo donde la tecnología conecte a las personas, despierte conciencia y deje un legado positivo en la Tierra y más allá.</p>
+    <p style="margin-top:1rem;">Mi visión es un mundo donde la tecnología conecte personas y deje una huella positiva en la Tierra... y más allá.</p>
   </div>
 </section>
+
 <section id="selected-projects" class="projects fade-in">
-  <h2>🚀 Proyectos Destacados</h2>
+  <h2>🚀 Proyectos Seleccionados</h2>
   <ul>
-    <li><strong>🏆 WERC 2025 (Proyecto Premiado):</strong> Sistema de filtración de agua impulsado por viento para la restauración post-incendios.
+    <li><strong>🏆 WERC 2025 (Ganador):</strong> Sistema de filtración eólico para restauración tras incendios. 
       <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">Ver</a>
-      <img src="werc_badge.jpg" alt="WERC Badge" style="height:20px; margin-left:10px;">
     </li>
-    <li><strong>🌱 Invernadero Marciano:</strong> Mentoría con NASA sobre sistemas sostenibles de cultivo en Marte.
+    <li><strong>🌱 Invernadero Marciano:</strong> Mentora en diseño de alimentos sostenibles en Marte (NASA). 
       <a href="martian_greenhouse.html" target="_blank">Ver</a>
     </li>
-    <li><strong>🛰️ Misión SSEP:</strong> Investigación enviada a la EEI sobre mucílago de nopal para purificación de agua.
+    <li><strong>🛰️ Misión SSEP:</strong> Experimento de mucílago de nopal en microgravedad (EEI). 
       <a href="ssep_project.html" target="_blank">Ver</a>
     </li>
-    <li><strong>🧪 Evento La Rodadora:</strong> Talleres científicos en vivo para niñas en Ciudad Juárez.
+    <li><strong>🧪 La Rodadora:</strong> Talleres científicos para niñas en Ciudad Juárez. 
       <a href="rodadora.html" target="_blank">Ver</a>
     </li>
   </ul>
 </section>
 <section id="experience" class="fade-in">
-  <h2>🛠️ Experiencia</h2>
+  <h2>🛠️ Experiencia Profesional</h2>
   <ul>
-    <li><strong>🔬 Asistente de Investigación en RISE Lab</strong> (2025–Presente): Análisis de elementos finitos (FEA) en acero A36; modelado de soportes para eVTOL; pruebas térmicas de esfuerzos residuales.</li>
-    <li><strong>🛩️ Interna en Supernal eVTOL</strong> (2024): Diseño de sistemas de montaje mecánico; análisis de datos aerodinámicos; coautoría de estándares de diseño técnico.</li>
-    <li><strong>🧫 Asistente de Laboratorio en EPCC</strong> (2023–2024): Mantenimiento de equipos de química y biología; desarrollo de protocolos de seguridad.</li>
-    <li><strong>🧰 Especialista Freelance en Automatización</strong> (2020–2023): Desarrollo de sistemas 3D, interfaces con Arduino, herramientas educativas automatizadas e integraciones con sensores.</li>
+    <li><strong>🔬 Asistente de Investigación – RISE Lab (2025–Actualidad):</strong> Análisis FEA en acero A36; modelado de soportes para eVTOL; pruebas térmicas de tensión residual.</li>
+    <li><strong>🛩️ Interna en Supernal eVTOL (2024):</strong> Diseño de sistemas de montaje; análisis de datos aerodinámicos; co-autora de estándares de diseño.</li>
+    <li><strong>🧫 Asistente de Laboratorio – EPCC (2023–2024):</strong> Mantenimiento de equipos químicos/biológicos; desarrollo de protocolos de seguridad.</li>
+    <li><strong>🧰 Consultora Freelance en Automatización (2020–2023):</strong> Creación de sistemas 3D, rigs Arduino y herramientas AI para proyectos académicos.</li>
   </ul>
 </section>
+
 <section id="awards" class="card fade-in-scroll">
   <h2>🤝 Involucramiento y Premios</h2>
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-
+    
     <!-- Columna de Premios -->
     <div style="flex: 1; min-width: 280px;">
       <h3 style="color: #fbbdff;">🏅 Premios y Liderazgo</h3>
       <ul style="line-height: 1.8; font-size: 1rem;">
-        <li>🥇 <strong>Premio Terry McManus</strong> – Primer Lugar, Equipo WERC 2025</li>
-        <li>🤖 <strong>Programa ROLE</strong> – Investigación en Microgravedad, NASA/NMSU</li>
-        <li>🎓 <strong>Becaria Diversidad AIAA</strong> – Foro SciTech 2023</li>
-        <li>🌍 <strong>One Voice 4 Change</strong> – Mentora en programas STEM para jóvenes</li>
-        <li>🧪 <strong>Día de la Ciencia en La Rodadora</strong> – Anfitriona y Embajadora STEM</li>
-        <li>🎨 <strong>Foro Público de las Artes</strong> – Planificación cultural, Ciudad Juárez</li>
+        <li>🥇 <strong>Premio Terry McManus</strong> – 1er lugar, WERC 2025</li>
+        <li>🤖 <strong>NASA ROLE Program</strong> – Investigación microgravedad, NMSU</li>
+        <li>🎓 <strong>Becaria Diversidad AIAA</strong> – SciTech Forum 2023</li>
+        <li>🌍 <strong>Mentora STEM</strong> – One Voice 4 Change</li>
+        <li>🧪 <strong>Embajadora STEM</strong> – Evento en La Rodadora</li>
+        <li>🎨 <strong>Foro de Artes Públicas</strong> – Ciudad Juárez</li>
       </ul>
     </div>
 
@@ -116,11 +217,11 @@
     <div style="flex: 1; min-width: 280px;">
       <h3 style="color: #a8ffea;">🔗 Afiliaciones Profesionales</h3>
       <ul style="line-height: 1.8; font-size: 1rem;">
-        <li>🛠️ <strong>ASME</strong> – Miembro de Ingeniería Mecánica</li>
-        <li>🚀 <strong>AIAA</strong> – Miembro de Aeronáutica y Astronáutica</li>
-        <li>👩‍🔧 <strong>SHPE</strong> – Presidenta de SHPEtinas en NMSU</li>
-        <li>🏭 <strong>SME</strong> – Miembro de Ingeniería de Manufactura</li>
-        <li>🌟 <strong>MAES</strong> – Ingenieros y Científicos Mexicoamericanos</li>
+        <li>🛠️ <strong>ASME</strong> – Sociedad de Ingenieros Mecánicos</li>
+        <li>🚀 <strong>AIAA</strong> – Sociedad Aeroespacial</li>
+        <li>👩‍🔧 <strong>SHPE</strong> – Presidenta SHPEtinas (NMSU)</li>
+        <li>🏭 <strong>SME</strong> – Sociedad de Manufactura</li>
+        <li>🌟 <strong>MAES</strong> – Ingenieros y Científicos Mexicanos Americanos</li>
         <li>🔬 <strong>NSF STAR Scholar</strong> – Proyecto S-STEM (DACC–NMSU)</li>
       </ul>
     </div>
@@ -128,9 +229,9 @@
   </div>
 </section>
 <section id="contact" class="card fade-in-scroll" style="max-width: 600px; margin: auto; text-align: center;">
-  <h2 style="font-size: 2rem; color: #e5ccff;">✨ Contáctame</h2>
+  <h2 style="font-size: 2rem; color: #e5ccff;">✨ Contacto</h2>
   <p style="color: #ccc; font-size: 1.05rem; margin-bottom: 1.5rem;">
-    ¿Tienes preguntas o ideas? ¡Estoy feliz de saber de ti!
+    ¿Tienes ideas o preguntas? ¡Me encantaría saber de ti!
   </p>
 
   <div style="
@@ -168,16 +269,14 @@
 </section>
 
 <footer>
-  <p>© 2025 Naiqui M. Armendariz — Hecho con 💜 y combustible de cohete</p>
+  <p>© 2025 Naiqui M. Armendariz — Hecho con 💜 y visión espacial</p>
 </footer>
 
 <button id="backToTop" title="Volver arriba">⬆️</button>
 
-<!-- Audio de fondo -->
 <audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
 <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
 
-<!-- JavaScript -->
 <script>
   tsParticles.load("tsparticles", {
     fullScreen: { enable: false },
@@ -231,7 +330,6 @@
     });
   });
 </script>
-
 </body>
 </html>
 
