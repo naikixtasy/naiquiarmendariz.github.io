@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<header>
-  <img src="naiqui.jpg" alt="Naiqui Armendariz">
-  <h1>Naiqui M. Armendariz</h1>
-  <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
-</header>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#values">Values & Vision</a>
-  <a href="#selected-projects">Selected Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#involvement">Involvement</a>
-  <a href="#contact">Contact</a>
-  <a href="es.html">Español 🌎</a>
-  <button id="muteBtn">🔊</button>
-</nav>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naiqui M. Armendariz</title>
@@ -35,15 +18,17 @@
       color: #fff;
       overflow-x: hidden;
       text-align: justify;
+      position: relative;
     }
-
     #tsparticles {
       position: fixed;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       z-index: -1;
+      pointer-events: none;
     }
-
     header {
       background-image: url('nebulosa.jpg');
       background-size: cover;
@@ -52,7 +37,6 @@
       text-align: center;
       box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
     }
-
     header img {
       width: 180px;
       height: 180px;
@@ -61,17 +45,14 @@
       object-fit: cover;
       margin-bottom: 1rem;
     }
-
     header h1 {
       font-size: 2.5rem;
     }
-
     header p {
       font-size: 1.1rem;
       font-weight: 300;
       margin-top: 0.5rem;
     }
-
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -85,7 +66,6 @@
       font-size: 1rem;
       z-index: 10;
     }
-
     nav a, nav button {
       color: #fff;
       text-decoration: none;
@@ -93,7 +73,6 @@
       padding: 0.5rem 1rem;
       position: relative;
     }
-
     nav a::after, nav button::after {
       content: '';
       position: absolute;
@@ -104,36 +83,20 @@
       background: #9b5de5;
       transition: width .3s;
     }
-
     nav a:hover::after, nav button:hover::after {
       width: 100%;
     }
-
     section {
       padding: 4rem 10%;
       max-width: 1000px;
       margin: 0 auto;
     }
-
     h2 {
       color: #dbaaff;
       font-size: 2rem;
       margin-bottom: 2rem;
       text-align: center;
     }
-
-    .projects li,
-    .experience li,
-    .involvement li {
-      margin-bottom: 1.5rem;
-    }
-
-    .projects strong,
-    .experience strong,
-    .involvement strong {
-      color: #94f0ff;
-    }
-
     .project-btn {
       display: inline-block;
       background: linear-gradient(to right, #9b5de5, #40a4f5);
@@ -147,13 +110,11 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       transition: all 0.3s ease;
     }
-
     .project-btn:hover {
       background: linear-gradient(to right, #b86bff, #57bfff);
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
     }
-
     .involvement-columns {
       display: flex;
       flex-wrap: wrap;
@@ -161,17 +122,14 @@
       justify-content: space-between;
       margin-top: 2rem;
     }
-
     .involvement-column {
       flex: 1;
       min-width: 280px;
     }
-
     .involvement-column h3 {
       color: #fbbdff;
       margin-bottom: 1rem;
     }
-
     .involvement-column ul {
       list-style: none;
       padding-left: 0;
@@ -179,12 +137,10 @@
       line-height: 1.8;
       color: #fff;
     }
-
     #contact {
       text-align: center;
       padding: 2rem;
     }
-
     #contact a {
       color: white;
       font-weight: bold;
@@ -195,34 +151,28 @@
       transition: 0.3s ease;
       text-decoration: none;
     }
-
     #contact a:hover {
       background: linear-gradient(to right, #e27aff, #58c6ff);
     }
-
     footer {
       text-align: center;
       margin: 3rem 0;
       font-size: 0.85rem;
       color: #ccc;
     }
-
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         gap: 0.8rem;
       }
-
       section {
         padding: 2rem 5%;
       }
-
       .project-btn {
         display: block;
         width: fit-content;
-        margin-top: 0.5rem;
+        margin: 0.5rem auto;
       }
-
       .involvement-columns {
         flex-direction: column;
       }
@@ -230,7 +180,7 @@
   </style>
 </head>
 <body>
-<div id="tsparticles"></div>
+  <div id="tsparticles"></div>
 
 <!-- CONTENIDO DEL BODY A PARTIR DE AQUÍ -->
 <!-- ... (usa tu contenido de secciones como #about, #values, etc.) ... -->
