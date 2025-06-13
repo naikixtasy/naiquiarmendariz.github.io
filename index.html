@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<header>
+  <img src="naiqui.jpg" alt="Naiqui Armendariz">
+  <h1>Naiqui M. Armendariz</h1>
+  <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#values">Values & Vision</a>
+  <a href="#selected-projects">Selected Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#involvement">Involvement</a>
+  <a href="#contact">Contact</a>
+  <a href="es.html">Español 🌎</a>
+  <button id="muteBtn">🔊</button>
+</nav>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naiqui M. Armendariz</title>
@@ -18,17 +35,15 @@
       color: #fff;
       overflow-x: hidden;
       text-align: justify;
-      position: relative;
     }
+
     #tsparticles {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       z-index: -1;
-      pointer-events: none;
     }
+
     header {
       background-image: url('nebulosa.jpg');
       background-size: cover;
@@ -37,6 +52,7 @@
       text-align: center;
       box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
     }
+
     header img {
       width: 180px;
       height: 180px;
@@ -45,14 +61,17 @@
       object-fit: cover;
       margin-bottom: 1rem;
     }
+
     header h1 {
       font-size: 2.5rem;
     }
+
     header p {
       font-size: 1.1rem;
       font-weight: 300;
       margin-top: 0.5rem;
     }
+
     nav {
       display: flex;
       flex-wrap: wrap;
@@ -66,6 +85,7 @@
       font-size: 1rem;
       z-index: 10;
     }
+
     nav a, nav button {
       color: #fff;
       text-decoration: none;
@@ -73,6 +93,7 @@
       padding: 0.5rem 1rem;
       position: relative;
     }
+
     nav a::after, nav button::after {
       content: '';
       position: absolute;
@@ -83,20 +104,36 @@
       background: #9b5de5;
       transition: width .3s;
     }
+
     nav a:hover::after, nav button:hover::after {
       width: 100%;
     }
+
     section {
       padding: 4rem 10%;
       max-width: 1000px;
       margin: 0 auto;
     }
+
     h2 {
       color: #dbaaff;
       font-size: 2rem;
       margin-bottom: 2rem;
       text-align: center;
     }
+
+    .projects li,
+    .experience li,
+    .involvement li {
+      margin-bottom: 1.5rem;
+    }
+
+    .projects strong,
+    .experience strong,
+    .involvement strong {
+      color: #94f0ff;
+    }
+
     .project-btn {
       display: inline-block;
       background: linear-gradient(to right, #9b5de5, #40a4f5);
@@ -110,11 +147,13 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       transition: all 0.3s ease;
     }
+
     .project-btn:hover {
       background: linear-gradient(to right, #b86bff, #57bfff);
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
     }
+
     .involvement-columns {
       display: flex;
       flex-wrap: wrap;
@@ -122,14 +161,17 @@
       justify-content: space-between;
       margin-top: 2rem;
     }
+
     .involvement-column {
       flex: 1;
       min-width: 280px;
     }
+
     .involvement-column h3 {
       color: #fbbdff;
       margin-bottom: 1rem;
     }
+
     .involvement-column ul {
       list-style: none;
       padding-left: 0;
@@ -137,10 +179,12 @@
       line-height: 1.8;
       color: #fff;
     }
+
     #contact {
       text-align: center;
       padding: 2rem;
     }
+
     #contact a {
       color: white;
       font-weight: bold;
@@ -151,28 +195,34 @@
       transition: 0.3s ease;
       text-decoration: none;
     }
+
     #contact a:hover {
       background: linear-gradient(to right, #e27aff, #58c6ff);
     }
+
     footer {
       text-align: center;
       margin: 3rem 0;
       font-size: 0.85rem;
       color: #ccc;
     }
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         gap: 0.8rem;
       }
+
       section {
         padding: 2rem 5%;
       }
+
       .project-btn {
         display: block;
         width: fit-content;
-        margin: 0.5rem auto;
+        margin-top: 0.5rem;
       }
+
       .involvement-columns {
         flex-direction: column;
       }
@@ -180,7 +230,7 @@
   </style>
 </head>
 <body>
-  <div id="tsparticles"></div>
+<div id="tsparticles"></div>
 
 <!-- CONTENIDO DEL BODY A PARTIR DE AQUÍ -->
 <!-- ... (usa tu contenido de secciones como #about, #values, etc.) ... -->
@@ -253,34 +303,23 @@
 <section id="selected-projects" class="projects fade-in">
   <h2>🚀 Selected Projects</h2>
   <ul>
-<li>
-  <strong>🏆 WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration.
-  <div style="text-align: center; margin-top: 0.5rem;">
-    <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank" class="project-btn">📂 View Project</a>
-  </div>
-</li>
-
-<li>
-  <strong>🌱 Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars.
-  <div style="text-align: center; margin-top: 0.5rem;">
-    <a href="martian_greenhouse.html" target="_blank" class="project-btn">📂 View Project</a>
-  </div>
-</li>
-
-<li>
-  <strong>🛰️ SSEP Mission 1 (Award-Winning & ISS-Flown):</strong> Selected by NASA’s <strong>Student Spaceflight Experiments Program (SSEP)</strong> and launched to the ISS. Recognized with the <strong>Outstanding Achievement in Student Research</strong> by EPCC.
-  <div style="text-align: center; margin-top: 0.5rem;">
-    <a href="ssep_project.html" target="_blank" class="project-btn">📂 View Project</a>
-  </div>
-</li>
-
-<li>
-  <strong>🧪 La Rodadora Event:</strong> Live science workshops for girls in Ciudad Juárez.
-  <div style="text-align: center; margin-top: 0.5rem;">
-    <a href="rodadora.html" target="_blank" class="project-btn">📂 View Project</a>
-  </div>
-</li>
-
+    <li>
+      <strong>🏆 WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration.<br>
+      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank" class="project-btn">📂 View Project</a>
+    </li>
+    <li>
+      <strong>🌱 Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars.<br>
+      <a href="martian_greenhouse.html" target="_blank" class="project-btn">📂 View Project</a>
+    </li>
+   <li>
+  <strong>🏅 SSEP Mission 1 (Award-Winning & ISS-Flown):</strong> Selected by NASA's Student Spaceflight Experiments Program and launched to the International Space Station (ISS). Earned <strong>Outstanding Achievement in Student Research</strong> at EPCC.<br>
+  <a href="ssep_project.html" target="_blank" class="project-btn">📂 View Project</a>
+	</li>
+	
+    <li>
+      <strong>🧪 La Rodadora Event:</strong> Live science workshops for girls in Ciudad Juárez.<br>
+      <a href="rodadora.html" target="_blank" class="project-btn">📂 View Project</a>
+    </li>
   </ul>
 </section>
 <section id="experience" class="fade-in">
@@ -339,60 +378,3 @@
     </a>
   </div>
 </section>
-<audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
-  <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
-
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
-      background: { color: "transparent" },
-      particles: {
-        number: { value: 60 },
-        size: { value: 2 },
-        move: { enable: true, speed: 0.4 },
-        opacity: { value: 0.5 },
-        color: { value: "#ffffff" },
-        links: { enable: true, color: "#ffffff", distance: 100 }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          onClick: { enable: true, mode: "push" }
-        },
-        modes: {
-          repulse: { distance: 80 },
-          push: { quantity: 4 }
-        }
-      }
-    });
-
-    const backBtn = document.getElementById('backToTop');
-    window.onscroll = () => {
-      if (backBtn) backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-    };
-    if (backBtn) {
-      backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    const bg = document.getElementById('bgMusic');
-    const muteBtn = document.getElementById('muteBtn');
-    muteBtn?.addEventListener('click', () => {
-      if (bg.paused) {
-        bg.play(); muteBtn.textContent = '🔈';
-      } else {
-        bg.pause(); muteBtn.textContent = '🔊';
-      }
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      if (muteBtn) muteBtn.textContent = bg.paused ? '🔊' : '🔈';
-    });
-
-    document.querySelectorAll('nav a, nav button').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        const s = document.getElementById('hoverSound');
-        s.currentTime = 0; s.play();
-      });
-    });
-  </script>
-</body>
-</html>
