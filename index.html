@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naiqui M. Armendariz</title>
@@ -50,18 +51,27 @@
       font-weight: 300;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      position: sticky;
-      top: 0;
-      padding: 1rem 0;
-      font-size: 1.2rem;
-      z-index: 10;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap; /* allow items to wrap to a new line */
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  z-index: 10;
+  box-sizing: border-box;
+}
+nav a, nav button {
+  flex: 1 1 auto;
+  min-width: 120px;
+  text-align: center;
+  margin: 4px 0;
+}
+
 
     nav a, nav button {
       color: #fff;
