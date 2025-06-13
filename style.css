@@ -301,3 +301,31 @@ footer {
   display: inline-block;
   margin-top: 0.5rem;
 }
+.involvement-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.involvement-column {
+  flex: 1;
+  min-width: 280px;
+}
+
+.involvement-column h3 {
+  color: #fbbdff;
+  margin-bottom: 1rem;
+}
+
+.involvement-column ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #fff;
+}
