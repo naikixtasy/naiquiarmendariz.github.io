@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #0d001a, #1b0033);
       color: #fff;
@@ -23,6 +23,7 @@
     header {
       background-image: url('nebulosa.jpg');
       background-size: cover;
+      background-position: center;
       padding: 3rem 1rem;
       text-align: center;
       box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
@@ -35,37 +36,30 @@
       object-fit: cover;
       margin-bottom: 1rem;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+    header h1 { font-size: 2.5rem; }
     header p {
       font-size: 1.1rem;
-      margin-top: 0.5rem;
       font-weight: 300;
+      margin-top: 0.5rem;
     }
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(6px);
       position: sticky;
       top: 0;
       padding: 1rem;
-      font-size: 1.1rem;
       z-index: 10;
     }
     nav a, nav button {
       color: #fff;
-      background: none;
-      border: none;
-      padding: .5rem 1rem;
+      text-decoration: none;
       font-weight: 600;
-      cursor: pointer;
+      padding: 0.5rem 1rem;
       position: relative;
-      transition: color .3s, text-shadow .3s;
     }
     nav a::after, nav button::after {
       content: '';
@@ -75,11 +69,7 @@
       width: 0;
       height: 2px;
       background: #9b5de5;
-      transition: width .3s;
-    }
-    nav a:hover, nav button:hover {
-      color: #a64ac9;
-      text-shadow: 0 0 6px #a64ac9;
+      transition: width 0.3s;
     }
     nav a:hover::after, nav button:hover::after {
       width: 100%;
@@ -88,39 +78,61 @@
       padding: 4rem 10%;
       max-width: 1000px;
       margin: 0 auto;
-      text-align: left;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      text-align: justify;
     }
     h2 {
       color: #dbaaff;
       font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .project-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #9b5de5, #40a4f5);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin: 10px auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+    .project-btn:hover {
+      background: linear-gradient(to right, #b86bff, #57bfff);
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+    .projects li {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .involvement-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .involvement-column {
+      flex: 1;
+      min-width: 280px;
+    }
+    .involvement-column h3 {
+      color: #fbbdff;
       margin-bottom: 1rem;
       text-align: center;
     }
-    .about-card {
-      background: rgba(25, 0, 40, 0.7);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 0 20px rgba(155, 93, 229, 0.4);
-    }
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #9b5de5;
+    .involvement-column ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1rem;
+      line-height: 1.8;
       color: #fff;
-      border: none;
-      padding: .8rem;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
     }
   </style>
 </head>
-
 <body>
 <div id="tsparticles"></div>
 <header>
@@ -130,156 +142,97 @@
 </header>
 
 <nav>
-  <a href="#about">Sobre Mí</a>
+  <a href="#about">Sobre mí</a>
   <a href="#values">Valores y Visión</a>
   <a href="#selected-projects">Proyectos</a>
   <a href="#experience">Experiencia</a>
-  <a href="#awards">Involucramiento</a>
+  <a href="#awards">Premios</a>
   <a href="#contact">Contacto</a>
-  <a href="index.html" title="View in English">🇺🇸 English</a>
-  <button id="muteBtn" title="Música de fondo">🔊</button>
+  <a href="index.html">English 🌐</a>
 </nav>
 
 <section id="about">
   <h2>👩‍🚀 Sobre Mí</h2>
-  <div class="about-card">
-    <p><strong>Soy Naiqui M. Armendariz</strong>, estudiante de Ingeniería Aeroespacial y Mecánica con experiencia práctica en prototipado avanzado, análisis estructural, automatización y diseño de sistemas multidisciplinarios. He trabajado en experimentos enviados a la EEI, concursos de diseño sustentable y sistemas de impresión 3D personalizados.</p>
-    <p>Mis habilidades incluyen análisis de elementos finitos (ANSYS), diseño CAD (SolidWorks, CATIA), desarrollo Python, sensores y microcontroladores (ESP32, Arduino). He aplicado estas herramientas en la industria —incluida una pasantía con Supernal (Hyundai eVTOL)— donde diseñé sistemas de montaje para plataformas de movilidad aérea.</p>
-    <p>He liderado proyectos como:</p>
-    <ul>
-      <li>Diseño de un sistema de filtración eólica para restauración post-incendios (1° lugar en WERC 2025)</li>
-      <li>Investigación en microgravedad con mucílago de nopal para purificación de agua (proyecto enviado a la EEI)</li>
-      <li>Mentoría internacional con la NASA en sistemas sostenibles de alimentos en Marte</li>
-    </ul>
-    <p>También he impulsado iniciativas de divulgación STEM en comunidades marginadas y desarrollado herramientas internas para automatizar procesos académicos. Mi objetivo es aplicar ingeniería con impacto social y enfoque sostenible.</p>
-  </div>
+  <p>Soy Naiqui M. Armendariz, estudiante de doble carrera en Ingeniería Aeroespacial y Mecánica con experiencia práctica en prototipado avanzado, análisis estructural, automatización y diseño de sistemas multidisciplinarios.</p>
+  <p>He liderado y colaborado en proyectos de alto impacto, incluyendo investigaciones en microgravedad para la ISS y sistemas sustentables premiados.</p>
 </section>
+
 <section id="values">
   <h2>💫 Valores y Visión</h2>
-  <div class="about-card">
-    <p>Mi trabajo está guiado por la humanidad, la ética y el servicio. Cada solución debe mejorar vidas y respetar nuestro planeta. Mis valores son:</p>
-    <ul style="margin-top:1rem; line-height:1.6;">
-      <li><strong>Empatía e Inclusión</strong> – Diseñar con compasión para amplificar voces diversas.</li>
-      <li><strong>Innovación Ética</strong> – Promover tecnologías responsables y sostenibles.</li>
-      <li><strong>Integridad y Transparencia</strong> – Ser honesto en la investigación, el trabajo y la colaboración.</li>
-      <li><strong>Sostenibilidad</strong> – Crear soluciones que protejan al medio ambiente.</li>
-      <li><strong>Aprendizaje Continuo</strong> – Fomentar la curiosidad y el crecimiento personal.</li>
-    </ul>
-    <p style="margin-top:1rem;">Mi visión es un mundo donde la tecnología conecte personas y deje una huella positiva en la Tierra... y más allá.</p>
-  </div>
+  <p>Creo que cada solución de ingeniería debe elevar la vida humana y respetar el planeta. Mis valores incluyen la empatía, la innovación ética, la integridad y el aprendizaje continuo.</p>
 </section>
 
 <section id="selected-projects" class="projects fade-in">
-  <h2>🚀 Proyectos Seleccionados</h2>
+  <h2>🚀 Proyectos Destacados</h2>
   <ul>
-    <li><strong>🏆 WERC 2025 (Ganador):</strong> Sistema de filtración eólico para restauración tras incendios. 
-      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">Ver</a>
+    <li>
+      <strong>🏆 WERC 2025:</strong> Sistema de filtración eólica para restauración post-incendios.<br>
+      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank" class="project-btn">📂 Ver Proyecto</a>
     </li>
-    <li><strong>🌱 Invernadero Marciano:</strong> Mentora en diseño de alimentos sostenibles en Marte (NASA). 
-      <a href="martian_greenhouse.html" target="_blank">Ver</a>
+    <li>
+      <strong>🛰️ SSEP NASA:</strong> Investigación enviada a la ISS + Premio de Investigación Estudiantil EPCC.<br>
+      <a href="ssep_project.html" target="_blank" class="project-btn">📂 Ver Proyecto</a>
     </li>
-    <li><strong>🛰️ Misión SSEP:</strong> Experimento de mucílago de nopal en microgravedad (EEI). 
-      <a href="ssep_project.html" target="_blank">Ver</a>
+    <li>
+      <strong>🌱 Invernadero Marciano:</strong> Mentorado de NASA sobre sistemas alimentarios sostenibles para Marte.<br>
+      <a href="martian_greenhouse.html" target="_blank" class="project-btn">📂 Ver Proyecto</a>
     </li>
-    <li><strong>🧪 La Rodadora:</strong> Talleres científicos para niñas en Ciudad Juárez. 
-      <a href="rodadora.html" target="_blank">Ver</a>
+    <li>
+      <strong>🧪 Talleres Rodadora:</strong> Eventos científicos en Ciudad Juárez para niñas.<br>
+      <a href="rodadora.html" target="_blank" class="project-btn">📂 Ver Proyecto</a>
     </li>
   </ul>
 </section>
-<section id="experience" class="fade-in">
-  <h2>🛠️ Experiencia Profesional</h2>
+
+<section id="experience">
+  <h2>🛠️ Experiencia</h2>
   <ul>
-    <li><strong>🔬 Asistente de Investigación – RISE Lab (2025–Actualidad):</strong> Análisis FEA en acero A36; modelado de soportes para eVTOL; pruebas térmicas de tensión residual.</li>
-    <li><strong>🛩️ Interna en Supernal eVTOL (2024):</strong> Diseño de sistemas de montaje; análisis de datos aerodinámicos; co-autora de estándares de diseño.</li>
-    <li><strong>🧫 Asistente de Laboratorio – EPCC (2023–2024):</strong> Mantenimiento de equipos químicos/biológicos; desarrollo de protocolos de seguridad.</li>
-    <li><strong>🧰 Consultora Freelance en Automatización (2020–2023):</strong> Creación de sistemas 3D, rigs Arduino y herramientas AI para proyectos académicos.</li>
+    <li><strong>🔬 RISE Lab</strong>: Asistente de investigación en análisis térmico y estructural.</li>
+    <li><strong>🛩️ Supernal (Hyundai)</strong>: Intern en sistemas mecánicos e integración.</li>
+    <li><strong>🧫 EPCC</strong>: Asistente de laboratorio en química y biología.</li>
   </ul>
 </section>
 
-<section id="awards" class="card fade-in-scroll">
-  <h2>🤝 Involucramiento y Premios</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-    
-    <!-- Columna de Premios -->
-    <div style="flex: 1; min-width: 280px;">
-      <h3 style="color: #fbbdff;">🏅 Premios y Liderazgo</h3>
-      <ul style="line-height: 1.8; font-size: 1rem;">
-        <li>🥇 <strong>Premio Terry McManus</strong> – 1er lugar, WERC 2025</li>
-        <li>🤖 <strong>NASA ROLE Program</strong> – Investigación microgravedad, NMSU</li>
-        <li>🎓 <strong>Becaria Diversidad AIAA</strong> – SciTech Forum 2023</li>
-        <li>🌍 <strong>Mentora STEM</strong> – One Voice 4 Change</li>
-        <li>🧪 <strong>Embajadora STEM</strong> – Evento en La Rodadora</li>
-        <li>🎨 <strong>Foro de Artes Públicas</strong> – Ciudad Juárez</li>
+<section id="awards">
+  <h2>🏅 Premios y Afiliaciones</h2>
+  <div class="involvement-columns">
+    <div class="involvement-column">
+      <h3>🏆 Premios y Liderazgo</h3>
+      <ul>
+        <li>Terry McManus – 1° lugar, WERC</li>
+        <li>NASA ROLE Program – Microgravedad</li>
+        <li>Becaria de Diversidad AIAA</li>
+        <li>STEM para jóvenes – One Voice 4 Change</li>
+        <li>Embajadora – Ciencia en La Rodadora</li>
       </ul>
     </div>
-
-    <!-- Columna de Afiliaciones -->
-    <div style="flex: 1; min-width: 280px;">
-      <h3 style="color: #a8ffea;">🔗 Afiliaciones Profesionales</h3>
-      <ul style="line-height: 1.8; font-size: 1rem;">
-        <li>🛠️ <strong>ASME</strong> – Sociedad de Ingenieros Mecánicos</li>
-        <li>🚀 <strong>AIAA</strong> – Sociedad Aeroespacial</li>
-        <li>👩‍🔧 <strong>SHPE</strong> – Presidenta SHPEtinas (NMSU)</li>
-        <li>🏭 <strong>SME</strong> – Sociedad de Manufactura</li>
-        <li>🌟 <strong>MAES</strong> – Ingenieros y Científicos Mexicanos Americanos</li>
-        <li>🔬 <strong>NSF STAR Scholar</strong> – Proyecto S-STEM (DACC–NMSU)</li>
+    <div class="involvement-column">
+      <h3>🔗 Afiliaciones Profesionales</h3>
+      <ul>
+        <li>ASME – Sociedad de Ingenieros Mecánicos</li>
+        <li>AIAA – Asociación Aeroespacial</li>
+        <li>SHPE – Expresidenta SHPEtinas</li>
+        <li>SME – Sociedad Manufactura</li>
+        <li>MAES – Ingenieros Latinos</li>
+        <li>NSF STAR – Beca S-STEM</li>
       </ul>
     </div>
-
   </div>
 </section>
-<section id="contact" class="card fade-in-scroll" style="max-width: 600px; margin: auto; text-align: center;">
-  <h2 style="font-size: 2rem; color: #e5ccff;">✨ Contacto</h2>
-  <p style="color: #ccc; font-size: 1.05rem; margin-bottom: 1.5rem;">
-    ¿Tienes ideas o preguntas? ¡Me encantaría saber de ti!
-  </p>
 
-  <div style="
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(155, 93, 229, 0.2);
-    backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  ">
-    <a href="mailto:naikixtasy86@gmail.com" style="
-      background: linear-gradient(to right, #a64ac9, #40a4f5);
-      padding: 12px 24px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    ">📨 Escríbeme</a>
-
-    <div style="margin-top: 1rem;">
-      <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #0e76a8;">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/naikixtasy" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #f06292;">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  </div>
+<section id="contact">
+  <h2>✨ Contáctame</h2>
+  <p>¿Tienes ideas o proyectos? ¡Estoy disponible!</p>
+  <a href="mailto:naikixtasy86@gmail.com" class="project-btn">📨 Escríbeme</a>
 </section>
 
 <footer>
   <p>© 2025 Naiqui M. Armendariz — Hecho con 💜 y visión espacial</p>
 </footer>
 
-<button id="backToTop" title="Volver arriba">⬆️</button>
-
-<audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
-<audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
-
+<!-- Scripts -->
 <script>
   tsParticles.load("tsparticles", {
-    fullScreen: { enable: false },
     background: { color: "transparent" },
     particles: {
       number: { value: 60 },
@@ -300,36 +253,6 @@
       }
     }
   });
-
-  const backBtn = document.getElementById('backToTop');
-  window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-  backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  const bg = document.getElementById('bgMusic');
-  const muteBtn = document.getElementById('muteBtn');
-
-  muteBtn.addEventListener('click', () => {
-    if (bg.paused) {
-      bg.play();
-      muteBtn.textContent = '🔈';
-    } else {
-      bg.pause();
-      muteBtn.textContent = '🔊';
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    muteBtn.textContent = bg.paused ? '🔊' : '🔈';
-  });
-
-  document.querySelectorAll('nav a, nav button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      const s = document.getElementById('hoverSound');
-      s.currentTime = 0;
-      s.play();
-    });
-  });
 </script>
 </body>
 </html>
-
