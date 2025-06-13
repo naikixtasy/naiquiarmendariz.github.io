@@ -92,6 +92,20 @@
       width: 100%;
     }
 
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #9b5de5;
+      color: #fff;
+      border: none;
+      padding: .8rem;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+    }
+
     section {
       padding: 4rem 10%;
       max-width: 1000px;
@@ -154,75 +168,131 @@
       font-size: .85rem;
       color: #ccc;
     }
-
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #9b5de5;
-      color: #fff;
-      border: none;
-      padding: .8rem;
-      font-size: 1.2rem;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <div id="tsparticles"></div>
+<div id="tsparticles"></div>
+<header>
+  <img src="naiqui.jpg" alt="Naiqui Armendariz">
+  <h1>Naiqui M. Armendariz</h1>
+  <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
+</header>
 
-  <header>
-    <img src="naiqui.jpg" alt="Naiqui Armendariz">
-    <h1>Naiqui M. Armendariz</h1>
-    <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
-  </header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#values">Values & Vision</a>
+  <a href="#selected-projects">Selected Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#involvement">Involvement</a>
+  <a href="#contact">Contact</a>
+  <button id="muteBtn" title="Toggle Music">🔊</button>
+</nav>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#values">Values & Vision</a>
-    <a href="#selected-projects">Selected Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#involvement">Involvement</a>
-    <a href="#contact">Contact</a>
-    <button id="muteBtn" title="Toggle Music">🔊</button>
-  </nav>
+<button id="backToTop" title="Back to Top">⬆️</button>
+<section id="about">
+  <h2>👩‍🚀 About Me</h2>
+  <div class="about-card">
+    <p>
+      I am <strong>Naiqui M. Armendariz</strong>, a double major in Aerospace and Mechanical Engineering with extensive hands-on experience in advanced prototyping, structural analysis, automation, and multidisciplinary system design. My academic and professional journey bridges engineering fundamentals with real-world applications—ranging from ISS-flown experiments and microgravity materials research to award-winning environmental systems and rapid-prototyping using 3D printing technologies.
+    </p>
+    <p>
+      My skillset includes Finite Element Analysis (ANSYS), CAD/CAE (SolidWorks, CATIA), thermomechanical design, mounting system integration, Python automation, and hardware interfacing with sensors and microcontrollers (ESP32, Arduino). I’ve applied these tools in both research and industry settings—including an internship with Supernal (Hyundai's eVTOL division), where I contributed to mechanical mounting systems for future air mobility platforms.
+    </p>
+    <p>
+      I’ve led and contributed to high-impact, cross-disciplinary projects such as:
+      <ul>
+        <li>Designing and testing microgravity samples for the RISE Lab at EPCC, at NMSU created mechanical parts using FEA and thermal residual stress analysis.</li>
+        <li>Developing a wind-powered water filtration system recognized with the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
+        <li>Co-developing an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC’s Annual Colloquium.</li>
+      </ul>
+    </p>
+    <p>
+      Beyond engineering, I’m the founder of several automation and educational outreach initiatives, combining technical expertise with accessible solutions for underserved communities. I’ve volunteered across international STEM programs, contributed to public cultural forums, and built internal tools that simplify workflows and training for academic institutions.
+    </p>
+    <p>
+      I bring a rare combination of technical depth, prototyping speed, design intuition, and social impact awareness—ready to contribute to projects in aerospace systems, sustainable engineering, and advanced R&D environments.
+    </p>
+  </div>
+</section>
 
+<section id="values">
+  <h2>💫 My Values & Vision</h2>
+  <div class="about-card">
+    <p>At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:</p>
+    <ul style="margin-top:1rem; line-height:1.6;">
+      <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
+      <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
+      <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
+      <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
+      <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
+    </ul>
+    <p style="margin-top:1rem;">My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.</p>
+  </div>
+</section>
+<section id="selected-projects" class="projects fade-in">
+  <h2>🚀 Selected Projects</h2>
+  <ul>
+    <li><strong>🏆 WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration. 
+      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank">View</a>
+      <img src="badge-werc.png" alt="WERC Badge" style="height:20px; margin-left:10px;">
+    </li>
+    <li><strong>🌱 Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars. 
+      <a href="martian_greenhouse.html" target="_blank">View</a>
+    </li>
+    <li><strong>🛰️ SSEP Mission 1:</strong> ISS-flown research on cactus mucilage for water purification. 
+      <a href="ssep_project.html" target="_blank">View</a>
+    </li>
+    <li><strong>🧪 La Rodadora Event:</strong> Live science workshops for girls in Ciudad Juárez. 
+      <a href="rodadora_event.html" target="_blank">View</a>
+    </li>
+  </ul>
+</section>
+
+<section id="experience" class="fade-in">
+  <h2>🛠️ Experience</h2>
+  <ul>
+    <li><strong>🔬 RISE Lab Research Assistant</strong> (2025–Present): FEA on A36 steel; modeled eVTOL brackets; thermal stress testing.</li>
+    <li><strong>🛩️ Supernal eVTOL Intern</strong> (2024): Designed mounting systems; analyzed aerodynamic data; co-authored design standards.</li>
+    <li><strong>🧫 EPCC Lab Assistant</strong> (2023–2024): Chemistry and biology equipment maintenance; safety protocol development.</li>
+    <li><strong>🧰 Freelance Automation Expert</strong> (2020–2023): Built 3D systems, Arduino rigs, and AI tools for education and research.</li>
+  </ul>
+</section>
+<section id="involvement" class="fade-in">
+  <h2>🤝 Involvement & Awards</h2>
+  <ul>
+    <li>🏅 <strong>Terry McManus Award</strong> – 1st Place Team, WERC 2025</li>
+    <li>🤖 <strong>ROLE Program</strong> – Robotics & microgravity NASA research, NMSU</li>
+    <li>🎓 <strong>AIAA Diversity Scholar</strong> – SciTech Forum 2023</li>
+    <li>🌍 <strong>One Voice 4 Change</strong> – STEM mentor for underserved youth</li>
+    <li>👩‍🔬 <strong>La Rodadora Science Day</strong> – Event host and STEM ambassador</li>
+    <li>🎨 <strong>Foro Público de las Artes</strong> – Cultural planning committee, Juárez</li>
+  </ul>
+</section>
+
+
+<section id="contact" class="fade-in">
+  <h2>📬 Contact Me</h2>
+  <p>📧 <a href="mailto:naikixtasy86@gmail.com">naikixtasy86@gmail.com</a></p>
+  <p>🔗 <a href="https://linkedin.com/in/naiquiarmendariz" target="_blank">LinkedIn</a></p>
+  <p>🐙 <a href="https://github.com/naikixtasy" target="_blank">GitHub</a></p>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Naiqui M. Armendariz — Made with 💜 and rocket fuel</p>
+  </footer>
+
+  <!-- Back to Top Button -->
   <button id="backToTop" title="Back to Top">⬆️</button>
 
-  <section id="about">
-    <h2>👩‍🚀 About Me</h2>
-    <div class="about-card">
-      <p>
-        I am <strong>Naiqui M. Armendariz</strong>, a double major in Aerospace and Mechanical Engineering with extensive hands-on experience in advanced prototyping, structural analysis, automation, and multidisciplinary system design. My academic and professional journey bridges engineering fundamentals with real-world applications—ranging from ISS-flown experiments and microgravity materials research to award-winning environmental systems and rapid-prototyping using 3D printing technologies.
-      </p>
-      <p>
-        My skillset includes Finite Element Analysis (ANSYS), CAD/CAE (SolidWorks, CATIA), thermomechanical design, mounting system integration, Python automation, and hardware interfacing with sensors and microcontrollers (ESP32, Arduino). I’ve applied these tools in both research and industry settings—including an internship with Supernal (Hyundai's eVTOL division), where I contributed to mechanical mounting systems for future air mobility platforms.
-      </p>
-      <p>
-        I’ve led and contributed to high-impact, cross-disciplinary projects such as:
-        <ul>
-          <li>Designing and testing microgravity samples for the RISE Lab at EPCC, at NMSU created mechanical parts using FEA and thermal residual stress analysis.</li>
-          <li>Developing a wind-powered water filtration system recognized with the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
-          <li>Co-developing an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC’s Annual Colloquium.</li>
-        </ul>
-      </p>
-      <p>
-        Beyond engineering, I’m the founder of several automation and educational outreach initiatives, combining technical expertise with accessible solutions for underserved communities. I’ve volunteered across international STEM programs, contributed to public cultural forums, and built internal tools that simplify workflows and training for academic institutions.
-      </p>
-      <p>
-        I bring a rare combination of technical depth, prototyping speed, design intuition, and social impact awareness—ready to contribute to projects in aerospace systems, sustainable engineering, and advanced R&D environments.
-      </p>
-    </div>
-  </section>
-
-  <!-- Other sections (values, projects, experience, involvement, contact, footer) remain the same as your current layout -->
-
-  <audio id="bgMusic" loop src="space-theme.mp3"></audio>
+  <!-- Background Audio -->
+  <audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
   <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
 
+  <!-- JavaScript -->
   <script>
+    // Particle background
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       background: { color: "transparent" },
@@ -246,10 +316,12 @@
       }
     });
 
+    // Back to top button
     const backBtn = document.getElementById('backToTop');
     window.onscroll = () => backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
     backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+    // Audio Mute Toggle
     const bg = document.getElementById('bgMusic');
     const muteBtn = document.getElementById('muteBtn');
 
@@ -267,10 +339,13 @@
       muteBtn.textContent = bg.paused ? '🔊' : '🔈';
     });
 
-    document.querySelector('.about-card')?.addEventListener('mouseenter', () => {
-      const s = document.getElementById('hoverSound');
-      s.currentTime = 0;
-      s.play();
+    // Optional hover sound effect
+    document.querySelectorAll('nav a, nav button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const s = document.getElementById('hoverSound');
+        s.currentTime = 0;
+        s.play();
+      });
     });
   </script>
 </body>

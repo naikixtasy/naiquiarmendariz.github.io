@@ -87,3 +87,12 @@ footer {
   color: #ffffff;
   text-shadow: 0 0 5px #73b1ff, 0 0 10px #73b1ff;
 }
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
