@@ -134,5 +134,25 @@ footer {
 #contact i:hover {
   color: #ffd6ff;
 }
+.project-button {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 6px 14px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.project-button:hover {
+  background: linear-gradient(to right, #9b5de5, #5f7eff);
+  transform: scale(1.05);
+  text-shadow: 0 0 5px #fff;
+}
 
 
