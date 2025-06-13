@@ -149,10 +149,6 @@ footer {
   transition: background 0.3s, transform 0.2s;
 }
 
-.project-button:hover {
-  background: linear-gradient(to right, #9b5de5, #5f7eff);
-  transform: scale(1.05);
-  text-shadow: 0 0 5px #fff;
-}
+
 
 
