@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <style>
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,8 +20,8 @@
       text-align: justify;
       position: relative;
     }
-	tsparticles {
- 	 position: fixed;
+    #tsparticles {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -30,7 +29,6 @@
       z-index: -1;
       pointer-events: none;
     }
-
     header {
       background-image: url('nebulosa.jpg');
       background-size: cover;
@@ -182,7 +180,7 @@
   </style>
 </head>
 <body>
-<div id="tsparticles"></div>
+  <div id="tsparticles"></div>
 
 <header>
   <img src="naiqui.jpg" alt="Naiqui Armendariz">
@@ -302,3 +300,60 @@
   <p>© 2025 Naiqui M. Armendariz — Hecho con 💜 y combustible de cohete</p>
 </footer>
 
+<audio id="bgMusic" loop autoplay src="space-theme.mp3"></audio>
+  <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.4 },
+        opacity: { value: 0.5 },
+        color: { value: "#ffffff" },
+        links: { enable: true, color: "#ffffff", distance: 100 }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 80 },
+          push: { quantity: 4 }
+        }
+      }
+    });
+
+    const backBtn = document.getElementById('backToTop');
+    window.onscroll = () => {
+      if (backBtn) backBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    };
+    if (backBtn) {
+      backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const bg = document.getElementById('bgMusic');
+    const muteBtn = document.getElementById('muteBtn');
+    muteBtn?.addEventListener('click', () => {
+      if (bg.paused) {
+        bg.play(); muteBtn.textContent = '🔈';
+      } else {
+        bg.pause(); muteBtn.textContent = '🔊';
+      }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      if (muteBtn) muteBtn.textContent = bg.paused ? '🔊' : '🔈';
+    });
+
+    document.querySelectorAll('nav a, nav button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        const s = document.getElementById('hoverSound');
+        s.currentTime = 0; s.play();
+      });
+    });
+  </script>
+</body>
+</html>
