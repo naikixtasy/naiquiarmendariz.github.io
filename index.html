@@ -21,9 +21,12 @@
 
     #tsparticles {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
+      pointer-events: none; /* no bloquea clicks */
     }
 
     header {
@@ -192,8 +195,7 @@
       color: #fbbdff;
       margin-bottom: 0.6rem;
       font-size: 1.25rem;
-      text-align: leftD
-      left;
+      text-align: left; /* ✅ fixed */
     }
     .chips {
       display: flex;
@@ -257,17 +259,11 @@
       .open-to { padding: 0 5%; }
       .involvement-columns { flex-direction: column; }
 
-      .nav {
-        justify-content: space-between;
-      }
+      .nav { justify-content: space-between; }
 
-      .nav .brand {
-        display: inline-block;
-      }
+      .nav .brand { display: inline-block; }
 
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
 
       .nav-toggle {
         display: inline-flex;
@@ -278,7 +274,7 @@
       .mobile-menu {
         display: block;
         position: fixed;
-        top: 68px; /* approx nav height */
+        top: 68px;
         left: 12px;
         right: 12px;
         background: rgba(0,0,0,0.85);
@@ -308,9 +304,7 @@
         font-weight: 650;
       }
 
-      .m-link:hover {
-        background: rgba(155,93,229,0.18);
-      }
+      .m-link:hover { background: rgba(155,93,229,0.18); }
 
       .m-btn {
         width: 100%;
@@ -336,7 +330,6 @@
         pointer-events: auto;
       }
 
-      /* Extra: anchor jump offset in mobile */
       section { scroll-margin-top: 95px; }
     }
   </style>
@@ -381,7 +374,6 @@
     </div>
   </div>
 
-  <!-- ✅ Corrected nav: Desktop + Mobile Hamburger -->
   <nav class="nav">
     <a class="brand" href="#top" aria-label="Go to top">✨</a>
 
@@ -389,7 +381,6 @@
       ☰
     </button>
 
-    <!-- Desktop links -->
     <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#skills">Core Skills</a>
@@ -402,7 +393,6 @@
       <button id="muteBtn" aria-label="Mute background audio">🔊</button>
     </div>
 
-    <!-- Mobile dropdown panel -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <a href="#about" class="m-link">About</a>
       <a href="#skills" class="m-link">Core Skills</a>
@@ -602,21 +592,23 @@
       navToggle.textContent = "☰";
     }
 
-    navToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.contains("open");
-      isOpen ? closeMenu() : openMenu();
-    });
+    if (navToggle && mobileMenu && menuBackdrop) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.contains("open");
+        isOpen ? closeMenu() : openMenu();
+      });
 
-    menuBackdrop.addEventListener("click", closeMenu);
+      menuBackdrop.addEventListener("click", closeMenu);
 
-    mobileMenu.addEventListener("click", (e) => {
-      const clickedLink = e.target.closest("a");
-      if (clickedLink) closeMenu();
-    });
+      mobileMenu.addEventListener("click", (e) => {
+        const clickedLink = e.target.closest("a");
+        if (clickedLink) closeMenu();
+      });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    }
 
     // ===== Sync mute button desktop/mobile (optional) =====
     const muteBtn = document.getElementById("muteBtn");
