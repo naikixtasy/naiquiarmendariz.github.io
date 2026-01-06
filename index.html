@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<header>
-  <img src="naiqui.jpg" alt="Naiqui Armendariz">
-  <h1>Naiqui M. Armendariz B.S. </h1>
-  <p>Aerospace & Mechanical Engineering | Automation | Sustainability | Space Systems</p>
-</header>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#values">Values & Vision</a>
-  <a href="#selected-projects">Selected Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#involvement">Involvement</a>
-  <a href="#contact">Contact</a>
-  <a href="es.html">Español 🌎</a>
-  <button id="muteBtn">🔊</button>
-</nav>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naiqui M. Armendariz</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #0d001a, #1b0033);
@@ -62,10 +44,7 @@
       margin-bottom: 1rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-    }
-
+    header h1 { font-size: 2.5rem; }
     header p {
       font-size: 1.1rem;
       font-weight: 300;
@@ -92,6 +71,9 @@
       font-weight: 600;
       padding: 0.5rem 1rem;
       position: relative;
+      background: transparent;
+      border: none;
+      cursor: pointer;
     }
 
     nav a::after, nav button::after {
@@ -105,9 +87,7 @@
       transition: width .3s;
     }
 
-    nav a:hover::after, nav button:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after, nav button:hover::after { width: 100%; }
 
     section {
       padding: 4rem 10%;
@@ -122,17 +102,12 @@
       text-align: center;
     }
 
-    .projects li,
-    .experience li,
-    .involvement li {
-      margin-bottom: 1.5rem;
-    }
+    ul { margin-top: 1rem; padding-left: 1.2rem; line-height: 1.8; }
+    li { margin-bottom: 1rem; }
 
     .projects strong,
     .experience strong,
-    .involvement strong {
-      color: #94f0ff;
-    }
+    .involvement strong { color: #94f0ff; }
 
     .project-btn {
       display: inline-block;
@@ -162,30 +137,19 @@
       margin-top: 2rem;
     }
 
-    .involvement-column {
-      flex: 1;
-      min-width: 280px;
-    }
+    .involvement-column { flex: 1; min-width: 280px; }
 
     .involvement-column h3 {
       color: #fbbdff;
       margin-bottom: 1rem;
+      text-align: left;
     }
 
-    .involvement-column ul {
-      list-style: none;
-      padding-left: 0;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #fff;
-    }
+    .involvement-column ul { list-style: none; padding-left: 0; }
 
-    #contact {
-      text-align: center;
-      padding: 2rem;
-    }
+    #contact { text-align: center; padding: 2rem; }
 
-    #contact a {
+    #contact a.email-btn {
       color: white;
       font-weight: bold;
       border-radius: 10px;
@@ -196,7 +160,7 @@
       text-decoration: none;
     }
 
-    #contact a:hover {
+    #contact a.email-btn:hover {
       background: linear-gradient(to right, #e27aff, #58c6ff);
     }
 
@@ -208,173 +172,212 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      section {
-        padding: 2rem 5%;
-      }
-
-      .project-btn {
-        display: block;
-        width: fit-content;
-        margin-top: 0.5rem;
-      }
-
-      .involvement-columns {
-        flex-direction: column;
-      }
+      nav { flex-direction: column; gap: 0.8rem; }
+      section { padding: 2rem 5%; }
+      .project-btn { display: block; width: fit-content; margin-top: 0.5rem; }
+      .involvement-columns { flex-direction: column; }
     }
   </style>
 </head>
+
 <body>
-<div id="tsparticles"></div>
+  <div id="tsparticles"></div>
 
-<!-- CONTENIDO DEL BODY A PARTIR DE AQUÍ -->
-<!-- ... (usa tu contenido de secciones como #about, #values, etc.) ... -->
+  <!-- Optional background audio (add your file if you want it) -->
+  <!-- <audio id="bgAudio" src="background.mp3" autoplay loop></audio> -->
 
-<script>
-  tsParticles.load("tsparticles", {
-    fullScreen: { enable: false },
-    background: { color: "transparent" },
-    particles: {
-      number: { value: 60 },
-      size: { value: 2 },
-      move: { enable: true, speed: 0.4 },
-      opacity: { value: 0.5 },
-      color: { value: "#ffffff" },
-      links: { enable: true, color: "#ffffff", distance: 100 }
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" },
-        onClick: { enable: true, mode: "push" }
+  <header>
+    <img src="naiqui.jpg" alt="Naiqui Armendariz">
+    <h1>Naiqui M. Armendariz, B.S. Mechanical Engineering</h1>
+    <p>Mechanical Engineer | Aerospace Systems | Automation | Sustainable & Space Technologies</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#values">Values & Vision</a>
+    <a href="#selected-projects">Selected Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#awards">Involvement</a>
+    <a href="#contact">Contact</a>
+    <a href="es.html">Español 🌎</a>
+    <button id="muteBtn" aria-label="Mute background audio">🔊</button>
+  </nav>
+
+  <section id="about">
+    <h2>👩‍🚀 About Me</h2>
+
+    <p>
+      I am <strong>Naiqui M. Armendariz</strong>, a Mechanical Engineer with a completed Bachelor of Science in Mechanical Engineering and a strong background in aerospace systems, automation, and multidisciplinary engineering design. I am currently <strong>seeking full-time engineering opportunities</strong> where I can contribute hands-on technical expertise, systems thinking, and rapid problem-solving to high-impact projects.
+    </p>
+
+    <p>
+      My experience spans advanced prototyping, structural and thermal analysis, and real-world system integration—bridging engineering fundamentals with practical application across aerospace, sustainability, and research environments. I have worked on projects ranging from ISS-flown experiments and microgravity materials research to award-winning environmental engineering systems and rapid-prototyping using 3D printing technologies.
+    </p>
+
+    <p>
+      My technical skill set includes <strong>Finite Element Analysis (ANSYS)</strong>, <strong>CAD/CAE (SolidWorks, CATIA)</strong>, thermomechanical design, residual stress analysis, and mechanical mounting system integration. I also bring strong automation and programming experience using <strong>Python</strong>, along with hardware interfacing using <strong>Arduino and ESP32</strong> microcontrollers, sensors, and data pipelines.
+    </p>
+
+    <p>
+      Professionally, I completed an internship with <strong>Supernal (Hyundai Motor Group’s eVTOL division)</strong>, where I contributed to mechanical mounting systems and design integration for future air mobility platforms. In academic and research settings, I have supported FEA-driven design decisions, experimental validation, and cross-functional collaboration in fast-paced environments.
+    </p>
+
+    <ul>
+      <li>Designed and tested microgravity samples for the RISE Lab, including FEA-driven mechanical components and thermal stress analysis.</li>
+      <li>Co-developed a wind-powered water filtration system awarded the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
+      <li>Developed an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC.</li>
+    </ul>
+
+    <p>
+      Beyond engineering, I have founded and led automation and technical outreach initiatives, building tools that streamline workflows, support research teams, and expand STEM access for underserved communities. I bring a combination of <strong>technical depth, practical execution, leadership, and adaptability</strong>—ready to contribute immediately in mechanical, aerospace, or advanced R&amp;D roles.
+    </p>
+  </section>
+
+  <section id="values">
+    <h2>💫 My Values & Vision</h2>
+    <p>
+      At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:
+    </p>
+    <ul style="margin-top:1rem; line-height:1.6;">
+      <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
+      <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
+      <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
+      <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
+      <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
+    </ul>
+    <p style="margin-top:1rem;">
+      My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.
+    </p>
+  </section>
+
+  <section id="selected-projects" class="projects">
+    <h2>🚀 Selected Projects</h2>
+    <ul>
+      <li>
+        <strong>🏆 WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration.<br>
+        <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank" class="project-btn">📂 View Project</a>
+      </li>
+      <li>
+        <strong>🌱 Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars.<br>
+        <a href="martian_greenhouse.html" target="_blank" class="project-btn">📂 View Project</a>
+      </li>
+      <li>
+        <strong>🏅 SSEP Mission 1 (Award-Winning & ISS-Flown):</strong> Selected by NASA's Student Spaceflight Experiments Program and launched to the International Space Station (ISS). Earned <strong>Outstanding Achievement in Student Research</strong> at EPCC.<br>
+        <a href="ssep_project.html" target="_blank" class="project-btn">📂 View Project</a>
+      </li>
+      <li>
+        <strong>🧪 La Rodadora Event:</strong> Live science workshops for girls in Ciudad Juárez.<br>
+        <a href="rodadora.html" target="_blank" class="project-btn">📂 View Project</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience" class="experience">
+    <h2>🛠️ Experience</h2>
+    <ul>
+      <li><strong>🔬 RISE Lab Research Assistant</strong> (2025–Present): FEA on A36 steel; modeled eVTOL brackets; thermal stress testing.</li>
+      <li><strong>🛩️ Supernal eVTOL Intern</strong> (2024): Designed mounting systems; analyzed aerodynamic data; co-authored design standards.</li>
+      <li><strong>🧫 EPCC Lab Assistant</strong> (2023–2024): Chemistry and biology equipment maintenance; safety protocol development.</li>
+      <li><strong>🧰 Freelance Automation Expert</strong> (2020–2023): Built 3D systems, Arduino rigs, and AI tools for education and research.</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2>🤝 Involvement & Awards</h2>
+    <div class="involvement-columns">
+      <div class="involvement-column">
+        <h3>🏅 Awards & Leadership</h3>
+        <ul>
+          <li>🥇 <strong>Terry McManus Award</strong> – 1st Place Team, WERC 2025</li>
+          <li>🤖 <strong>ROLE Program</strong> – NASA Microgravity Research, NMSU</li>
+          <li>🎓 <strong>AIAA Diversity Scholar</strong> – SciTech Forum 2023</li>
+          <li>🌍 <strong>One Voice 4 Change</strong> – STEM Mentor for underserved youth</li>
+          <li>🧪 <strong>La Rodadora Science Day</strong> – STEM Host & Ambassador</li>
+          <li>🎨 <strong>Foro Público de las Artes</strong> – Cultural planning, Juárez</li>
+        </ul>
+      </div>
+
+      <div class="involvement-column">
+        <h3>🔗 Professional Affiliations</h3>
+        <ul>
+          <li>🛠️ <strong>ASME</strong> – Mechanical Engineers Society Member</li>
+          <li>🚀 <strong>AIAA</strong> – Aeronautics & Astronautics Member</li>
+          <li>👩‍🔧 <strong>SHPE</strong> – Former SHPEtinas President, NMSU</li>
+          <li>🏭 <strong>SME</strong> – Manufacturing Engineers Society Member</li>
+          <li>🌟 <strong>MAES</strong> – Mexican American Engineers & Scientists</li>
+          <li>🔬 <strong>NSF STAR Scholar</strong> – S-STEM Project (DACC–NMSU)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>✨ Contact Me</h2>
+    <p style="color: #ccc; font-size: 1.05rem; margin-bottom: 1.5rem;">
+      Got questions or ideas? I'd love to hear from you!
+    </p>
+
+    <!-- NOTE: This was "naikixtasy86@gmail.com" in your file. Change it if you want a different email. -->
+    <a class="email-btn" href="mailto:naikixtasy86@gmail.com">📨 Write Me</a>
+
+    <div style="margin-top: 1.5rem;">
+      <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #0e76a8;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/naikixtasy" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #f06292;">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Naiqui M. Armendariz — Built with stardust ✨
+  </footer>
+
+  <script>
+    // Particles
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        size: { value: 2 },
+        move: { enable: true, speed: 0.4 },
+        opacity: { value: 0.5 },
+        color: { value: "#ffffff" },
+        links: { enable: true, color: "#ffffff", distance: 100 }
       },
-      modes: {
-        repulse: { distance: 80 },
-        push: { quantity: 4 }
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 80 },
+          push: { quantity: 4 }
+        }
       }
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mute button logic (works if you enable the <audio> element above)
+    const muteBtn = document.getElementById("muteBtn");
+    const bgAudio = document.getElementById("bgAudio");
+
+    function setMuteIcon() {
+      if (!bgAudio) { muteBtn.textContent = "🔊"; return; }
+      muteBtn.textContent = bgAudio.muted ? "🔇" : "🔊";
     }
-  });
-</script>
+
+    muteBtn.addEventListener("click", () => {
+      if (!bgAudio) return; // audio is optional
+      bgAudio.muted = !bgAudio.muted;
+      setMuteIcon();
+    });
+
+    setMuteIcon();
+  </script>
 </body>
 </html>
-<section id="about">
-  <h2>👩‍🚀 About Me</h2>
-  <p>
-    I am <strong>Naiqui M. Armendariz </strong>, a double major in Aerospace and Mechanical Engineering with extensive hands-on experience in advanced prototyping, structural analysis, automation, and multidisciplinary system design. My academic and professional journey bridges engineering fundamentals with real-world applications—ranging from ISS-flown experiments and microgravity materials research to award-winning environmental systems and rapid-prototyping using 3D printing technologies.
-  </p>
-  <p>
-    My skillset includes Finite Element Analysis (ANSYS), CAD/CAE (SolidWorks, CATIA), thermomechanical design, mounting system integration, Python automation, and hardware interfacing with sensors and microcontrollers (ESP32, Arduino). I’ve applied these tools in both research and industry settings—including an internship with Supernal (Hyundai's eVTOL division), where I contributed to mechanical mounting systems for future air mobility platforms.
-  </p>
-  <p>
-    I’ve led and contributed to high-impact, cross-disciplinary projects such as:
-  </p>
-  <ul>
-    <li>Designing and testing microgravity samples for the RISE Lab at EPCC, at NMSU created mechanical parts using FEA and thermal residual stress analysis.</li>
-    <li>Developing a wind-powered water filtration system recognized with the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
-    <li>Co-developing an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC’s Annual Colloquium.</li>
-  </ul>
-  <p>
-    Beyond engineering, I’m the founder of several automation and educational outreach initiatives, combining technical expertise with accessible solutions for underserved communities. I’ve volunteered across international STEM programs, contributed to public cultural forums, and built internal tools that simplify workflows and training for academic institutions.
-  </p>
-  <p>
-    I bring a rare combination of technical depth, prototyping speed, design intuition, and social impact awareness—ready to contribute to projects in aerospace systems, sustainable engineering, and advanced R&D environments.
-  </p>
-</section>
-<section id="values">
-  <h2>💫 My Values & Vision</h2>
-  <p>
-    At the core of my work lies a deep commitment to humanity, integrity, and service. I believe every engineering solution should elevate people’s lives and honor our planet. My personal compass is guided by:
-  </p>
-  <ul style="margin-top:1rem; line-height:1.6;">
-    <li><strong>Empathy & Inclusion</strong> – Designing with compassion to empower underrepresented voices.</li>
-    <li><strong>Ethical Innovation</strong> – Championing responsible AI and sustainable technologies.</li>
-    <li><strong>Integrity & Transparency</strong> – Upholding honesty in research, collaboration, and communication.</li>
-    <li><strong>Stewardship & Sustainability</strong> – Building systems that protect our environment for future generations.</li>
-    <li><strong>Growth & Learning</strong> – Fostering curiosity, self-awareness, and lifelong education.</li>
-  </ul>
-  <p style="margin-top:1rem;">
-    My vision is a world where technology brings people together, sparks self-awareness, and leaves a positive legacy on Earth and beyond.
-  </p>
-</section>
-<section id="selected-projects" class="projects fade-in">
-  <h2>🚀 Selected Projects</h2>
-  <ul>
-    <li>
-      <strong>🏆 WERC 2025 (Award-Winning):</strong> Wind-powered water filtration for wildfire restoration.<br>
-      <a href="https://naikixtasy.github.io/werc-2025-project/" target="_blank" class="project-btn">📂 View Project</a>
-    </li>
-    <li>
-      <strong>🌱 Martian Greenhouse:</strong> NASA-led mentorship on sustainable food systems for Mars.<br>
-      <a href="martian_greenhouse.html" target="_blank" class="project-btn">📂 View Project</a>
-    </li>
-   <li>
-  <strong>🏅 SSEP Mission 1 (Award-Winning & ISS-Flown):</strong> Selected by NASA's Student Spaceflight Experiments Program and launched to the International Space Station (ISS). Earned <strong>Outstanding Achievement in Student Research</strong> at EPCC.<br>
-  <a href="ssep_project.html" target="_blank" class="project-btn">📂 View Project</a>
-	</li>
-	
-    <li>
-      <strong>🧪 La Rodadora Event:</strong> Live science workshops for girls in Ciudad Juárez.<br>
-      <a href="rodadora.html" target="_blank" class="project-btn">📂 View Project</a>
-    </li>
-  </ul>
-</section>
-<section id="experience" class="fade-in">
-  <h2>🛠️ Experience</h2>
-  <ul>
-    <li><strong>🔬 RISE Lab Research Assistant</strong> (2025–Present): FEA on A36 steel; modeled eVTOL brackets; thermal stress testing.</li>
-    <li><strong>🛩️ Supernal eVTOL Intern</strong> (2024): Designed mounting systems; analyzed aerodynamic data; co-authored design standards.</li>
-    <li><strong>🧫 EPCC Lab Assistant</strong> (2023–2024): Chemistry and biology equipment maintenance; safety protocol development.</li>
-    <li><strong>🧰 Freelance Automation Expert</strong> (2020–2023): Built 3D systems, Arduino rigs, and AI tools for education and research.</li>
-  </ul>
-</section>
-<section id="awards" class="fade-in-scroll">
-  <h2>🤝 Involvement & Awards</h2>
-  <div class="involvement-columns">
-
-    <div class="involvement-column">
-      <h3>🏅 Awards & Leadership</h3>
-      <ul>
-        <li>🥇 <strong>Terry McManus Award</strong> – 1st Place Team, WERC 2025</li>
-        <li>🤖 <strong>ROLE Program</strong> – NASA Microgravity Research, NMSU</li>
-        <li>🎓 <strong>AIAA Diversity Scholar</strong> – SciTech Forum 2023</li>
-        <li>🌍 <strong>One Voice 4 Change</strong> – STEM Mentor for underserved youth</li>
-        <li>🧪 <strong>La Rodadora Science Day</strong> – STEM Host & Ambassador</li>
-        <li>🎨 <strong>Foro Público de las Artes</strong> – Cultural planning, Juárez</li>
-      </ul>
-    </div>
-
-    <div class="involvement-column">
-      <h3>🔗 Professional Affiliations</h3>
-      <ul>
-        <li>🛠️ <strong>ASME</strong> – Mechanical Engineers Society Member</li>
-        <li>🚀 <strong>AIAA</strong> – Aeronautics & Astronautics Member</li>
-        <li>👩‍🔧 <strong>SHPE</strong> – Former SHPEtinas President, NMSU</li>
-        <li>🏭 <strong>SME</strong> – Manufacturing Engineers Society Member</li>
-        <li>🌟 <strong>MAES</strong> – Mexican American Engineers & Scientists</li>
-        <li>🔬 <strong>NSF STAR Scholar</strong> – S-STEM Project (DACC–NMSU)</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-<section id="contact">
-  <h2>✨ Contact Me</h2>
-  <p style="color: #ccc; font-size: 1.05rem; margin-bottom: 1.5rem;">
-    Got questions or ideas? I'd love to hear from you!
-  </p>
-
-  <a href="mailto:naikixtasy86@gmail.com">📨 Write Me</a>
-
-  <div style="margin-top: 1.5rem;">
-    <a href="https://www.linkedin.com/in/naiquiarmendariz/" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #0e76a8;">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/naikixtasy" target="_blank" style="margin: 0 1rem; font-size: 1.7rem; color: #f06292;">
-      <i class="fab fa-github"></i>
-    </a>
-  </div>
-</section>
