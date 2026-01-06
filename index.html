@@ -66,21 +66,35 @@
     }
     .hook strong { color: #94f0ff; }
 
-    nav {
+    /* ===== NAV (Desktop + Mobile Hamburger) ===== */
+    .nav {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
       gap: 1rem;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(6px);
       position: sticky;
       top: 0;
-      padding: 1rem;
-      font-size: 1rem;
-      z-index: 10;
+      padding: 0.9rem 1rem;
+      z-index: 20;
     }
 
-    nav a, nav button {
+    .nav .brand {
+      display: none;
+      text-decoration: none;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .nav a, .nav button {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
@@ -91,7 +105,7 @@
       cursor: pointer;
     }
 
-    nav a::after, nav button::after {
+    .nav a::after, .nav button::after {
       content: '';
       position: absolute;
       bottom: -4px;
@@ -101,13 +115,31 @@
       background: #9b5de5;
       transition: width .3s;
     }
-    nav a:hover::after, nav button:hover::after { width: 100%; }
+    .nav a:hover::after, .nav button:hover::after { width: 100%; }
+
+    /* Toggle button hidden on desktop */
+    .nav-toggle {
+      display: none;
+      font-size: 1.35rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid rgba(155,93,229,0.45);
+      color: #fff;
+      background: rgba(0,0,0,0.35);
+    }
+
+    /* Mobile menu panel (hidden by default) */
+    .mobile-menu { display: none; }
+    .menu-backdrop { display: none; }
 
     section {
       padding: 4rem 10%;
       max-width: 1000px;
       margin: 0 auto;
     }
+
+    /* Helps anchor jumps not hide titles behind sticky nav */
+    section { scroll-margin-top: 110px; }
 
     h2 {
       color: #dbaaff;
@@ -160,7 +192,8 @@
       color: #fbbdff;
       margin-bottom: 0.6rem;
       font-size: 1.25rem;
-      text-align: left;
+      text-align: leftD
+      left;
     }
     .chips {
       display: flex;
@@ -216,19 +249,100 @@
       color: #ccc;
     }
 
+    /* ===== Mobile behavior ===== */
     @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 0.8rem; }
-      section { padding: 2rem 5%; }
-      .open-to { padding: 0 5%; }
-      .project-btn { display: block; width: fit-content; margin-top: 0.5rem; }
-      .involvement-columns { flex-direction: column; }
       header h1 { font-size: 2.0rem; }
       .hook { margin: 1rem 1rem 0 1rem; }
+      section { padding: 2rem 5%; }
+      .open-to { padding: 0 5%; }
+      .involvement-columns { flex-direction: column; }
+
+      .nav {
+        justify-content: space-between;
+      }
+
+      .nav .brand {
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 68px; /* approx nav height */
+        left: 12px;
+        right: 12px;
+        background: rgba(0,0,0,0.85);
+        border: 1px solid rgba(64,164,245,0.4);
+        border-radius: 16px;
+        padding: 0.75rem;
+        backdrop-filter: blur(10px);
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.18s ease;
+        z-index: 30;
+      }
+
+      .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .m-link {
+        display: block;
+        padding: 0.7rem 0.85rem;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 650;
+      }
+
+      .m-link:hover {
+        background: rgba(155,93,229,0.18);
+      }
+
+      .m-btn {
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      .menu-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
+        z-index: 25;
+      }
+
+      .menu-backdrop.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Extra: anchor jump offset in mobile */
+      section { scroll-margin-top: 95px; }
     }
   </style>
 </head>
 
-<body>
+<body id="top">
   <div id="tsparticles"></div>
 
   <header>
@@ -236,13 +350,11 @@
     <h1>Naiqui M. Armendariz, B.S. Mechanical Engineering</h1>
     <p>Mechanical Engineer | Aerospace Systems | Automation | Sustainable & Space Technologies</p>
 
-    <!-- 1-sentence recruiter hook -->
     <div class="hook">
       Mechanical Engineer (B.S.) blending <strong>FEA + CAD</strong> with hands-on prototyping and automation—ready to ship reliable designs in <strong>aerospace</strong>, <strong>advanced manufacturing</strong>, or <strong>R&amp;D</strong>.
     </div>
   </header>
 
-  <!-- “Currently Open To” mini-section -->
   <div class="open-to" id="open-to">
     <div class="open-card">
       <h3>✅ Currently Open To</h3>
@@ -269,19 +381,43 @@
     </div>
   </div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Core Skills</a>
-    <a href="#values">Values & Vision</a>
-    <a href="#selected-projects">Selected Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#awards">Involvement</a>
-    <a href="#contact">Contact</a>
-    <a href="es.html">Español 🌎</a>
-    <button id="muteBtn" aria-label="Mute background audio">🔊</button>
+  <!-- ✅ Corrected nav: Desktop + Mobile Hamburger -->
+  <nav class="nav">
+    <a class="brand" href="#top" aria-label="Go to top">✨</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      ☰
+    </button>
+
+    <!-- Desktop links -->
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Core Skills</a>
+      <a href="#values">Values & Vision</a>
+      <a href="#selected-projects">Selected Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Involvement</a>
+      <a href="#contact">Contact</a>
+      <a href="es.html">Español 🌎</a>
+      <button id="muteBtn" aria-label="Mute background audio">🔊</button>
+    </div>
+
+    <!-- Mobile dropdown panel -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#about" class="m-link">About</a>
+      <a href="#skills" class="m-link">Core Skills</a>
+      <a href="#values" class="m-link">Values & Vision</a>
+      <a href="#selected-projects" class="m-link">Selected Projects</a>
+      <a href="#experience" class="m-link">Experience</a>
+      <a href="#awards" class="m-link">Involvement</a>
+      <a href="#contact" class="m-link">Contact</a>
+      <a href="es.html" class="m-link">Español 🌎</a>
+      <button id="muteBtnMobile" class="m-link m-btn" aria-label="Mute background audio (mobile)">🔊</button>
+    </div>
   </nav>
 
-  <!-- ATS-focused skills block (scanner-friendly) -->
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+
   <section id="skills">
     <h2>🧠 Core Skills</h2>
     <ul>
@@ -295,56 +431,24 @@
 
   <section id="about">
     <h2>👩‍🚀 About Me</h2>
-
-    <!-- ATS-Optimized: Aerospace Version (ACTIVE) -->
     <p>
-      I am Naiqui M. Armendariz, a mechanical engineer focused on aerospace, space systems, and advanced R&D, currently seeking full-time opportunities. I bring hands-on experience in structural analysis (FEA/ANSYS), system integration, and fast prototyping—connecting engineering fundamentals to real hardware outcomes.
+      I am Naiqui M. Armendariz, a mechanical engineer focused on aerospace, space systems, and advanced R&amp;D, currently seeking full-time opportunities. I bring hands-on experience in structural analysis (FEA/ANSYS), system integration, and fast prototyping—connecting engineering fundamentals to real hardware outcomes.
     </p>
-
     <p>
       My work includes CAD/CAE (SolidWorks, CATIA), thermomechanical design concepts, and mounting system integration—supported by Python automation and hardware interfacing using Arduino/ESP32. I’ve applied these skills across research and industry settings, contributing to design decisions, analysis-driven iteration, and validation support.
     </p>
-
     <p>
       I completed an internship with <strong>Supernal (Hyundai Motor Group’s eVTOL division)</strong>, supporting mechanical mounting systems and design integration for future air mobility platforms. I have also contributed to projects spanning microgravity research and award-winning environmental engineering systems, with a focus on reliability, clarity in documentation, and cross-team execution.
     </p>
-
     <ul>
       <li><strong>FEA + Design:</strong> analysis-informed mechanical components; thermal stress and residual stress problem-solving</li>
       <li><strong>Systems + Integration:</strong> mounting/bracketry design, hardware fit and interface awareness, practical build constraints</li>
       <li><strong>Award-Winning Projects:</strong> wind-powered water filtration system recognized at WERC 2025</li>
       <li><strong>Space/Research:</strong> participation in ISS-related research and microgravity-focused programs</li>
     </ul>
-
     <p>
       I bring a combination of <strong>technical depth, hands-on speed, and systems thinking</strong>—ready to contribute immediately to mechanical design, structures/stress, test/validation, or integration teams.
     </p>
-
-    <!-- ATS-Optimized: Manufacturing Version (SWAP IN if targeting manufacturing) -->
-    <!--
-    <p>
-      I am <strong>Naiqui M. Armendariz</strong>, a Mechanical Engineer with a completed B.S. in Mechanical Engineering, currently seeking full-time opportunities in advanced manufacturing, product development, and R&amp;D. I bring experience in <strong>mechanical design, FEA (ANSYS), prototyping</strong>, and documentation—turning concepts into buildable, testable hardware.
-    </p>
-
-    <p>
-      My toolset includes CAD/CAE (SolidWorks, CATIA), design-for-manufacturability thinking, assembly awareness, and validation support. I also build automation tools using Python and integrate sensors/microcontrollers (Arduino/ESP32) to streamline workflows and reduce manual effort.
-    </p>
-
-    <p>
-      I completed an internship with <strong>Supernal</strong>, supporting mounting system design and integration. In research and lab environments, I’ve supported analysis-driven iteration, experimental workflows, and rapid prototyping with a practical focus on repeatability and reliability.
-    </p>
-
-    <ul>
-      <li><strong>DFM Mindset:</strong> build constraints, assembly fit, iteration speed, documentation</li>
-      <li><strong>Quality &amp; Validation Support:</strong> test readiness, measurement awareness, analysis-to-build loops</li>
-      <li><strong>Automation:</strong> Python-based tools to simplify processes and reduce errors</li>
-      <li><strong>Hands-On Execution:</strong> prototyping, lab hardware setup, and practical troubleshooting</li>
-    </ul>
-
-    <p>
-      I bring a combination of <strong>design, analysis, and execution</strong>—ready to contribute to manufacturing engineering, mechanical design, process improvement, and product development teams.
-    </p>
-    -->
   </section>
 
   <section id="values">
@@ -475,22 +579,66 @@
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Optional mute logic if you add audio later
-    const muteBtn = document.getElementById("muteBtn");
-    const bgAudio = document.getElementById("bgAudio");
+    // ===== Mobile Hamburger Menu Logic =====
+    const navToggle = document.getElementById("navToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuBackdrop = document.getElementById("menuBackdrop");
 
-    function setMuteIcon() {
-      if (!bgAudio) { muteBtn.textContent = "🔊"; return; }
-      muteBtn.textContent = bgAudio.muted ? "🔇" : "🔊";
+    function openMenu() {
+      mobileMenu.classList.add("open");
+      menuBackdrop.classList.add("open");
+      navToggle.setAttribute("aria-expanded", "true");
+      mobileMenu.setAttribute("aria-hidden", "false");
+      menuBackdrop.setAttribute("aria-hidden", "false");
+      navToggle.textContent = "✕";
     }
 
-    muteBtn.addEventListener("click", () => {
-      if (!bgAudio) return;
-      bgAudio.muted = !bgAudio.muted;
-      setMuteIcon();
+    function closeMenu() {
+      mobileMenu.classList.remove("open");
+      menuBackdrop.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      mobileMenu.setAttribute("aria-hidden", "true");
+      menuBackdrop.setAttribute("aria-hidden", "true");
+      navToggle.textContent = "☰";
+    }
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("open");
+      isOpen ? closeMenu() : openMenu();
     });
 
-    setMuteIcon();
+    menuBackdrop.addEventListener("click", closeMenu);
+
+    mobileMenu.addEventListener("click", (e) => {
+      const clickedLink = e.target.closest("a");
+      if (clickedLink) closeMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    // ===== Sync mute button desktop/mobile (optional) =====
+    const muteBtn = document.getElementById("muteBtn");
+    const muteBtnMobile = document.getElementById("muteBtnMobile");
+    const bgAudio = document.getElementById("bgAudio"); // optional audio element if you add one later
+
+    function setMuteIconBoth() {
+      const icon = (!bgAudio) ? "🔊" : (bgAudio.muted ? "🔇" : "🔊");
+      if (muteBtn) muteBtn.textContent = icon;
+      if (muteBtnMobile) muteBtnMobile.textContent = icon;
+    }
+
+    function toggleMute() {
+      if (!bgAudio) return;
+      bgAudio.muted = !bgAudio.muted;
+      setMuteIconBoth();
+    }
+
+    if (muteBtn) muteBtn.addEventListener("click", toggleMute);
+    if (muteBtnMobile) muteBtnMobile.addEventListener("click", toggleMute);
+
+    setMuteIconBoth();
   </script>
 </body>
 </html>
