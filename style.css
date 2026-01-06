@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #0d001a, #1b0033);
@@ -28,6 +29,7 @@ header {
   text-align: center;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
 }
+
 header img {
   width: 180px;
   height: 180px;
@@ -36,18 +38,26 @@ header img {
   object-fit: cover;
   margin-bottom: 1rem;
 }
+
 header h1 {
   font-size: 2.5rem;
 }
+
 header p {
   font-size: 1.1rem;
   font-weight: 300;
   margin-top: 0.5rem;
 }
 
-nav {
+/* ===========================
+   NAV: Desktop + Mobile Hamburger
+   =========================== */
+
+/* Nota: ya NO usamos "nav { ... }" genérico.
+   Usamos .nav para el nuevo menú. */
+.nav {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   background: rgba(0, 0, 0, 0.6);
@@ -56,16 +66,40 @@ nav {
   top: 0;
   padding: 1rem;
   font-size: 1rem;
-  z-index: 10;
+  z-index: 20;
 }
-nav a, nav button {
+
+/* Brand icon (solo en mobile) */
+.nav .brand {
+  display: none;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* Links normales desktop */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Estilo links/botones */
+.nav a,
+.nav button {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
   padding: 0.5rem 1rem;
   position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
-nav a::after, nav button::after {
+
+.nav a::after,
+.nav button::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -75,15 +109,45 @@ nav a::after, nav button::after {
   background: #9b5de5;
   transition: width .3s;
 }
-nav a:hover::after, nav button:hover::after {
+
+.nav a:hover::after,
+.nav button:hover::after {
   width: 100%;
 }
+
+/* Botón hamburguesa (hidden en desktop) */
+.nav-toggle {
+  display: none;
+  font-size: 1.35rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid rgba(155,93,229,0.45);
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Panel móvil */
+.mobile-menu {
+  display: none;
+}
+
+/* Backdrop móvil */
+.menu-backdrop {
+  display: none;
+}
+
+/* ===========================
+   LAYOUT / SECTIONS
+   =========================== */
 
 section {
   padding: 4rem 10%;
   max-width: 1000px;
   margin: 0 auto;
   text-align: justify;
+
+  /* Evita que el nav sticky tape títulos al hacer click en #anchors */
+  scroll-margin-top: 110px;
 }
 
 h2 {
@@ -103,16 +167,19 @@ h2 {
   list-style: none;
   padding: 0;
 }
+
 .projects li,
 .experience li,
 .involvement li {
   margin-bottom: 1.5rem;
 }
+
 .projects strong,
 .experience strong,
 .involvement strong {
   color: #94f0ff;
 }
+
 .projects a {
   text-decoration: none;
 }
@@ -130,11 +197,13 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
+
 .project-btn:hover {
   background: linear-gradient(to right, #b86bff, #57bfff);
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
+
 .projects li a.project-btn {
   display: inline-block;
   margin-top: 0.5rem;
@@ -147,14 +216,17 @@ h2 {
   justify-content: space-between;
   margin-top: 2rem;
 }
+
 .involvement-column {
   flex: 1;
   min-width: 280px;
 }
+
 .involvement-column h3 {
   color: #fbbdff;
   margin-bottom: 1rem;
 }
+
 .involvement-column ul {
   list-style: none;
   padding-left: 0;
@@ -167,6 +239,7 @@ h2 {
   text-align: center;
   padding: 2rem;
 }
+
 #contact a {
   color: white;
   font-weight: bold;
@@ -177,6 +250,7 @@ h2 {
   transition: 0.3s ease;
   text-decoration: none;
 }
+
 #contact a:hover {
   background: linear-gradient(to right, #e27aff, #58c6ff);
 }
@@ -203,35 +277,109 @@ footer {
   color: #ccc;
 }
 
-/* === RESPONSIVE === */
+/* ===========================
+   RESPONSIVE (MOBILE)
+   =========================== */
 @media (max-width: 768px) {
   header h1 {
     font-size: 1.8rem;
   }
-  nav {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
+
   section {
     padding: 2rem 5%;
+    scroll-margin-top: 95px; /* nav un poco más alto en mobile */
   }
+
   .project-btn {
     display: block;
     width: fit-content;
     margin-top: 0.5rem;
   }
+
   .involvement-columns {
     flex-direction: column;
   }
-}
-@media (max-width: 768px) {
-  nav {
+
+  /* NAV mobile behavior */
+  .nav {
+    justify-content: space-between;
     padding: 0.6rem;
     gap: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
-  nav a, nav button {
-    padding: 0.4rem 0.6rem;
+  .nav .brand {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none; /* Oculta el menú horizontal */
+  }
+
+  .nav-toggle {
+    display: inline-flex; /* Activa hamburguesa */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 68px; /* aprox altura del nav */
+    left: 12px;
+    right: 12px;
+    background: rgba(0,0,0,0.85);
+    border: 1px solid rgba(64,164,245,0.4);
+    border-radius: 16px;
+    padding: 0.75rem;
+    backdrop-filter: blur(10px);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.18s ease;
+    z-index: 30;
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .m-link {
+    display: block;
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 650;
+  }
+
+  .m-link:hover {
+    background: rgba(155,93,229,0.18);
+  }
+
+  .m-btn {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    z-index: 25;
+  }
+
+  .menu-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
