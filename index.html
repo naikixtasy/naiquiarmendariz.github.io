@@ -30,7 +30,7 @@
       background-image: url('nebulosa.jpg');
       background-size: cover;
       background-position: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 2rem 1rem;
       text-align: center;
       box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
     }
@@ -44,12 +44,27 @@
       margin-bottom: 1rem;
     }
 
-    header h1 { font-size: 2.5rem; }
+    header h1 { font-size: 2.4rem; }
     header p {
       font-size: 1.1rem;
       font-weight: 300;
       margin-top: 0.5rem;
     }
+
+    /* Recruiter hook banner */
+    .hook {
+      max-width: 980px;
+      margin: 1.2rem auto 0 auto;
+      padding: 0.9rem 1.2rem;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(155,93,229,0.5);
+      backdrop-filter: blur(6px);
+      text-align: center;
+      line-height: 1.5;
+      font-size: 1.05rem;
+    }
+    .hook strong { color: #94f0ff; }
 
     nav {
       display: flex;
@@ -86,7 +101,6 @@
       background: #9b5de5;
       transition: width .3s;
     }
-
     nav a:hover::after, nav button:hover::after { width: 100%; }
 
     section {
@@ -102,8 +116,9 @@
       text-align: center;
     }
 
-    ul { margin-top: 1rem; padding-left: 1.2rem; line-height: 1.8; }
-    li { margin-bottom: 1rem; }
+    p { line-height: 1.8; margin-bottom: 1rem; }
+    ul { margin-top: 0.8rem; padding-left: 1.2rem; line-height: 1.8; }
+    li { margin-bottom: 0.9rem; }
 
     .projects strong,
     .experience strong,
@@ -122,12 +137,47 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       transition: all 0.3s ease;
     }
-
     .project-btn:hover {
       background: linear-gradient(to right, #b86bff, #57bfff);
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
     }
+
+    /* “Currently Open To” card */
+    .open-to {
+      max-width: 1000px;
+      margin: -2rem auto 0 auto;
+      padding: 0 10%;
+    }
+    .open-card {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(64,164,245,0.45);
+      border-radius: 16px;
+      padding: 1.3rem 1.4rem;
+      backdrop-filter: blur(6px);
+    }
+    .open-card h3 {
+      color: #fbbdff;
+      margin-bottom: 0.6rem;
+      font-size: 1.25rem;
+      text-align: left;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+    .chip {
+      border: 1px solid rgba(155,93,229,0.55);
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      font-weight: 600;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+    .chip.alt { border-color: rgba(64,164,245,0.6); }
 
     .involvement-columns {
       display: flex;
@@ -136,19 +186,15 @@
       justify-content: space-between;
       margin-top: 2rem;
     }
-
     .involvement-column { flex: 1; min-width: 280px; }
-
     .involvement-column h3 {
       color: #fbbdff;
       margin-bottom: 1rem;
       text-align: left;
     }
-
     .involvement-column ul { list-style: none; padding-left: 0; }
 
     #contact { text-align: center; padding: 2rem; }
-
     #contact a.email-btn {
       color: white;
       font-weight: bold;
@@ -159,7 +205,6 @@
       transition: 0.3s ease;
       text-decoration: none;
     }
-
     #contact a.email-btn:hover {
       background: linear-gradient(to right, #e27aff, #58c6ff);
     }
@@ -174,8 +219,11 @@
     @media (max-width: 768px) {
       nav { flex-direction: column; gap: 0.8rem; }
       section { padding: 2rem 5%; }
+      .open-to { padding: 0 5%; }
       .project-btn { display: block; width: fit-content; margin-top: 0.5rem; }
       .involvement-columns { flex-direction: column; }
+      header h1 { font-size: 2.0rem; }
+      .hook { margin: 1rem 1rem 0 1rem; }
     }
   </style>
 </head>
@@ -183,17 +231,47 @@
 <body>
   <div id="tsparticles"></div>
 
-  <!-- Optional background audio (add your file if you want it) -->
-  <!-- <audio id="bgAudio" src="background.mp3" autoplay loop></audio> -->
-
   <header>
     <img src="naiqui.jpg" alt="Naiqui Armendariz">
     <h1>Naiqui M. Armendariz, B.S. Mechanical Engineering</h1>
     <p>Mechanical Engineer | Aerospace Systems | Automation | Sustainable & Space Technologies</p>
+
+    <!-- 1-sentence recruiter hook -->
+    <div class="hook">
+      Mechanical Engineer (B.S.) blending <strong>FEA + CAD</strong> with hands-on prototyping and automation—ready to ship reliable designs in <strong>aerospace</strong>, <strong>advanced manufacturing</strong>, or <strong>R&amp;D</strong>.
+    </div>
   </header>
+
+  <!-- “Currently Open To” mini-section -->
+  <div class="open-to" id="open-to">
+    <div class="open-card">
+      <h3>✅ Currently Open To</h3>
+      <p style="margin-bottom:0.2rem;">
+        Full-time roles where I can contribute mechanical design, structural analysis, test/validation support, and cross-functional execution.
+      </p>
+
+      <div class="chips" aria-label="Target roles">
+        <span class="chip">Mechanical Design Engineer</span>
+        <span class="chip">Structures / Stress Analyst (Entry)</span>
+        <span class="chip">Test / Validation Engineer</span>
+        <span class="chip">R&amp;D Engineer</span>
+        <span class="chip">Manufacturing / Process Engineer</span>
+        <span class="chip">Integration Engineer</span>
+      </div>
+
+      <div class="chips" aria-label="Target industries" style="margin-top:0.8rem;">
+        <span class="chip alt">Aerospace &amp; Space Systems</span>
+        <span class="chip alt">eVTOL / Advanced Air Mobility</span>
+        <span class="chip alt">Energy &amp; Sustainability</span>
+        <span class="chip alt">Advanced Manufacturing</span>
+        <span class="chip alt">Research &amp; Prototyping Labs</span>
+      </div>
+    </div>
+  </div>
 
   <nav>
     <a href="#about">About</a>
+    <a href="#skills">Core Skills</a>
     <a href="#values">Values & Vision</a>
     <a href="#selected-projects">Selected Projects</a>
     <a href="#experience">Experience</a>
@@ -203,34 +281,70 @@
     <button id="muteBtn" aria-label="Mute background audio">🔊</button>
   </nav>
 
+  <!-- ATS-focused skills block (scanner-friendly) -->
+  <section id="skills">
+    <h2>🧠 Core Skills</h2>
+    <ul>
+      <li><strong>Mechanical Design:</strong> CAD/CAE, assemblies, GD&amp;T familiarity, design for manufacturability (DFM) mindset, mounting/bracketry integration</li>
+      <li><strong>Analysis:</strong> FEA (ANSYS), stress/strain, thermal stress &amp; residual stress concepts, basic validation workflows</li>
+      <li><strong>Prototyping:</strong> rapid iteration, 3D printing, lab hardware setup, instrumentation support</li>
+      <li><strong>Automation:</strong> Python scripting, workflow tooling, sensors &amp; microcontrollers (Arduino/ESP32), data handling</li>
+      <li><strong>Collaboration:</strong> documentation, cross-functional teamwork, research + industry environments, safety &amp; lab protocols</li>
+    </ul>
+  </section>
+
   <section id="about">
     <h2>👩‍🚀 About Me</h2>
 
+    <!-- ATS-Optimized: Aerospace Version (ACTIVE) -->
     <p>
-      I am <strong>Naiqui M. Armendariz</strong>, a Mechanical Engineer with a completed Bachelor of Science in Mechanical Engineering and a strong background in aerospace systems, automation, and multidisciplinary engineering design. I am currently <strong>seeking full-time engineering opportunities</strong> where I can contribute hands-on technical expertise, systems thinking, and rapid problem-solving to high-impact projects.
+      I am <strong>Naiqui M. Armendariz</strong>, a Mechanical Engineer with a completed B.S. in Mechanical Engineering, currently seeking full-time opportunities in aerospace, space systems, and advanced R&amp;D. I bring experience in <strong>mechanical design, structural analysis (FEA/ANSYS), system integration</strong>, and fast prototyping—connecting engineering fundamentals to real hardware outcomes.
     </p>
 
     <p>
-      My experience spans advanced prototyping, structural and thermal analysis, and real-world system integration—bridging engineering fundamentals with practical application across aerospace, sustainability, and research environments. I have worked on projects ranging from ISS-flown experiments and microgravity materials research to award-winning environmental engineering systems and rapid-prototyping using 3D printing technologies.
+      My work includes CAD/CAE (SolidWorks, CATIA), thermomechanical design concepts, and mounting system integration—supported by Python automation and hardware interfacing using Arduino/ESP32. I’ve applied these skills across research and industry settings, contributing to design decisions, analysis-driven iteration, and validation support.
     </p>
 
     <p>
-      My technical skill set includes <strong>Finite Element Analysis (ANSYS)</strong>, <strong>CAD/CAE (SolidWorks, CATIA)</strong>, thermomechanical design, residual stress analysis, and mechanical mounting system integration. I also bring strong automation and programming experience using <strong>Python</strong>, along with hardware interfacing using <strong>Arduino and ESP32</strong> microcontrollers, sensors, and data pipelines.
-    </p>
-
-    <p>
-      Professionally, I completed an internship with <strong>Supernal (Hyundai Motor Group’s eVTOL division)</strong>, where I contributed to mechanical mounting systems and design integration for future air mobility platforms. In academic and research settings, I have supported FEA-driven design decisions, experimental validation, and cross-functional collaboration in fast-paced environments.
+      I completed an internship with <strong>Supernal (Hyundai Motor Group’s eVTOL division)</strong>, supporting mechanical mounting systems and design integration for future air mobility platforms. I have also contributed to projects spanning microgravity research and award-winning environmental engineering systems, with a focus on reliability, clarity in documentation, and cross-team execution.
     </p>
 
     <ul>
-      <li>Designed and tested microgravity samples for the RISE Lab, including FEA-driven mechanical components and thermal stress analysis.</li>
-      <li>Co-developed a wind-powered water filtration system awarded the <strong>Terry McManus Outstanding Student Award</strong> at the 35th WERC Environmental Design Contest.</li>
-      <li>Developed an ISS-selected research payload through the <strong>Student Spaceflight Experiments Program (SSEP)</strong>, earning 1st Place in Undergraduate Research at EPCC.</li>
+      <li><strong>FEA + Design:</strong> analysis-informed mechanical components; thermal stress and residual stress problem-solving</li>
+      <li><strong>Systems + Integration:</strong> mounting/bracketry design, hardware fit and interface awareness, practical build constraints</li>
+      <li><strong>Award-Winning Projects:</strong> wind-powered water filtration system recognized at WERC 2025</li>
+      <li><strong>Space/Research:</strong> participation in ISS-related research and microgravity-focused programs</li>
     </ul>
 
     <p>
-      Beyond engineering, I have founded and led automation and technical outreach initiatives, building tools that streamline workflows, support research teams, and expand STEM access for underserved communities. I bring a combination of <strong>technical depth, practical execution, leadership, and adaptability</strong>—ready to contribute immediately in mechanical, aerospace, or advanced R&amp;D roles.
+      I bring a combination of <strong>technical depth, hands-on speed, and systems thinking</strong>—ready to contribute immediately to mechanical design, structures/stress, test/validation, or integration teams.
     </p>
+
+    <!-- ATS-Optimized: Manufacturing Version (SWAP IN if targeting manufacturing) -->
+    <!--
+    <p>
+      I am <strong>Naiqui M. Armendariz</strong>, a Mechanical Engineer with a completed B.S. in Mechanical Engineering, currently seeking full-time opportunities in advanced manufacturing, product development, and R&amp;D. I bring experience in <strong>mechanical design, FEA (ANSYS), prototyping</strong>, and documentation—turning concepts into buildable, testable hardware.
+    </p>
+
+    <p>
+      My toolset includes CAD/CAE (SolidWorks, CATIA), design-for-manufacturability thinking, assembly awareness, and validation support. I also build automation tools using Python and integrate sensors/microcontrollers (Arduino/ESP32) to streamline workflows and reduce manual effort.
+    </p>
+
+    <p>
+      I completed an internship with <strong>Supernal</strong>, supporting mounting system design and integration. In research and lab environments, I’ve supported analysis-driven iteration, experimental workflows, and rapid prototyping with a practical focus on repeatability and reliability.
+    </p>
+
+    <ul>
+      <li><strong>DFM Mindset:</strong> build constraints, assembly fit, iteration speed, documentation</li>
+      <li><strong>Quality &amp; Validation Support:</strong> test readiness, measurement awareness, analysis-to-build loops</li>
+      <li><strong>Automation:</strong> Python-based tools to simplify processes and reduce errors</li>
+      <li><strong>Hands-On Execution:</strong> prototyping, lab hardware setup, and practical troubleshooting</li>
+    </ul>
+
+    <p>
+      I bring a combination of <strong>design, analysis, and execution</strong>—ready to contribute to manufacturing engineering, mechanical design, process improvement, and product development teams.
+    </p>
+    -->
   </section>
 
   <section id="values">
@@ -317,7 +431,6 @@
       Got questions or ideas? I'd love to hear from you!
     </p>
 
-    <!-- NOTE: This was "naikixtasy86@gmail.com" in your file. Change it if you want a different email. -->
     <a class="email-btn" href="mailto:naikixtasy86@gmail.com">📨 Write Me</a>
 
     <div style="margin-top: 1.5rem;">
@@ -362,7 +475,7 @@
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mute button logic (works if you enable the <audio> element above)
+    // Optional mute logic if you add audio later
     const muteBtn = document.getElementById("muteBtn");
     const bgAudio = document.getElementById("bgAudio");
 
@@ -372,7 +485,7 @@
     }
 
     muteBtn.addEventListener("click", () => {
-      if (!bgAudio) return; // audio is optional
+      if (!bgAudio) return;
       bgAudio.muted = !bgAudio.muted;
       setMuteIcon();
     });
